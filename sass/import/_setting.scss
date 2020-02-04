@@ -1,0 +1,147 @@
+@charset "utf-8";
+
+// htmlのクラス名はcamelCaseでエレメントは_でつなぐ
+// htmlのmodは--でつなぐ
+// sassの変数はcamelCase
+// sassのミックスインは-でつなぐ
+
+/////////////////////////////////////////////////////
+// 変数定義
+/////////////////////////////////////////////////////
+
+$textSize: 20px;
+$mainColor: #00ff0d;
+
+/////////////////////////////////////////////////////
+// ミックスインでリンクホバーの呼び出し
+/////////////////////////////////////////////////////
+
+@mixin link-color($normal, $hover) {
+  color: $normal;
+  &:hover {
+    color: $hover;
+    text-decoration: none;
+  }
+}
+
+// 呼び出すときの例
+.dummyClass {
+  @include link-color(#f00, #00f);
+}
+
+/////////////////////////////////////////////////////
+// 簡単なグラデーションのミックスイン
+/////////////////////////////////////////////////////
+
+@mixin liner-gradient($color: #f00, $way: to bottom, $percent: 20%) {
+  background-image: linear-gradient(
+    $way,
+    $color 0%,
+    lighten($color, $percent) 100%
+  );
+}
+// darkenでも可能
+
+// 呼び出すときの例
+.item {
+  margin: 0 auto;
+  max-width: 200px;
+  @include liner-gradient;
+}
+
+/////////////////////////////////////////////////////
+// z-indexをマップ型の変数とミックスインで管理
+/////////////////////////////////////////////////////
+
+// マップ型の変数  呼び出しにはmap-get($変数, マップ名)
+$layer: (
+  modal: 100,
+  header: 20,
+  tooltip: 10,
+  default: 1
+);
+
+// ミックスインでまとめて呼び出しを楽にする
+@mixin z-index($key) {
+  z-index: map-get($layer, $key);
+}
+
+// 呼び出しの例
+.dummyClass {
+  @include z-index(modal); // z-index: 100;になる
+}
+
+/////////////////////////////////////////////////////
+// リストの矢印アイコンをミックスインで管理
+/////////////////////////////////////////////////////
+
+@mixin link-icon($color: #333) {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    width: 10px;
+    height: 10px;
+    margin-top: -7px;
+    border-top: 3px solid $color;
+    border-right: 3px solid $color;
+    transform: rotate(45deg);
+  }
+}
+.links_ul {
+  margin: 20px;
+  li {
+    list-style-type: none;
+    margin: 0 0 1px;
+    a {
+      position: relative;
+      display: block;
+      text-decoration: none;
+      padding: 15px;
+      color: #333;
+      background: #eee;
+      @include link-icon(); // ここで読み込み
+    }
+  }
+}
+
+/////////////////////////////////////////////////////
+// 埋め込み動画の比率
+/////////////////////////////////////////////////////
+
+@mixin rwd-iframe($width: 16, $height: 9) {
+  position: relative;
+  padding-top: percentage($height / $width); // 比率をパーセテージ化する計算
+  > iframe {
+    position: absolute; // 親要素上に表示
+    top: 2.5%;
+    left: 2.5%; // 余白を作る場合の中央指定、余白なしは0
+    width: 95% !important;
+    height: 95% !important; //余白なしは100%
+  }
+}
+
+/////////////////////////////////////////////////////
+// メディアクエリをミックスインで管理
+/////////////////////////////////////////////////////
+
+// モバイルファースト
+$breakpoints: (
+  s: "(min-width: 480px)",
+  ipad: "(min-width: 768px)",
+  m: "(min-width: 960px)",
+  l: "(min-width: 1280px)"
+);
+
+@mixin media($breakpoint: ipad) {
+  @if map-has-key($breakpoints, $breakpoint) {// マップにキーが有るか調べる
+    @media #{map-get($breakpoints, $breakpoint)} {
+      @content;
+    }
+  } @else {// なかった場合のエラー表示
+    @error "$breakpointsにはキー #{$breakpoint} 　は存在しません";
+  }
+}
+// インクルードの後に入れ子にしてプロパティを書ける
+/////////////////////////////////////////////////////

@@ -1,0 +1,15 @@
+@import "import/**";
+
+body {
+  max-width: 800px;
+  @include media() {
+    max-width: 700px;
+  }
+}
+
+main {
+  max-width: 800px;
+  @include media() {
+    max-width: 600px;
+  }
+}
