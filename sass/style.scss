@@ -1,15 +1,156 @@
-@import "import/**";
+@import "0_base/sanitize";
+@import "1_mod/*.scss";
+@import "0_base/setting";
 
-body {
-  max-width: 800px;
-  @include media() {
-    max-width: 700px;
+.header {
+  &_bg {
+    width: 100%;
+    // height: 100%;
+    background: url(/images/header_img.jpg) center center / cover no-repeat;
+  }
+  &_inner {
+    width: 100%;
+    // position: absolute;
+    // bottom: -30vh
+    background: #1c1c1c;
+    box-shadow: 0px 16px 35px rgba(0, 0, 0, 0.5);
+
+
+    &_text {
+      text-align: center;
+      h1 {
+        padding-top: 10px;
+        font-family: $monts;
+        color: #fff;
+        font-weight: 500;
+        font-size: ms(3);
+        margin: 0;
+        // fon@include : ms(3);
+        line-height: 1.3em;
+        @include media(s) {
+          font-size: ms(3,$thread: m);
+          // @include ms-respond(font-size, 3);
+        }
+        @include media() {
+          font-size: ms(3,$thread:l);
+        }
+      }
+      h3 {
+        font-family: $monts;
+        color: #fff;
+        font-weight: 300;
+        font-size: ms(0);
+        margin: 0;
+        letter-spacing: 1.2px;
+        @include media (s) {
+          font-size: ms(0,$thread: m);
+        }
+        @include media () {
+          font-size: ms(0,$thread: l);
+        }
+      }
+    }
   }
 }
 
-main {
-  max-width: 800px;
-  @include media() {
-    max-width: 600px;
+.main {
+  &_text {
+    font-family: $notos;
+    font-size: 60px;
   }
+}
+/////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
+
+#wrapper {
+  nav {
+    position: fixed;
+    background: rgba($color: #1b2835, $alpha: 0.9);
+    top: 0;
+    height: 100%;
+    right: -300px;
+    width: 300px;
+    padding-top: 50px;
+    @include z-index(tooltip);
+    ul li {
+      padding: 20px 40px;
+      text-align: right;
+    }
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+  .btn-gnavi {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+    @include z-index(header);
+    transition: all 500ms;
+    span {
+      position: absolute;
+      width: 30px;
+      height: 3px;
+      background: #666;
+      transition: all 500ms;
+
+      &:nth-child(1) {
+        top: 0;
+      }
+      &:nth-child(2) {
+        top: 10px;
+      }
+      &:nth-child(3) {
+        top: 20px;
+      }
+    }
+  }
+}
+
+////////////////////////////////////////////////
+// ハンバーガーアイコンを矢印にするアニメーション
+////////////////////////////////////////////////
+
+#wrapper .btn-gnavi.open {
+  transform: rotate(180deg);
+}
+
+#wrapper .btn-gnavi.open span {
+  background: #fff;
+}
+
+#wrapper .btn-gnavi.open span:nth-child(1) {
+  width: 24px;
+  transform: translate(-7px, 17px) rotate(45deg);
+}
+
+#wrapper .btn-gnavi.open span:nth-child(3) {
+  width: 24px;
+  transform: translate(-7px, -17px) rotate(-45deg);
+}
+
+////////////////////////////////////////////////
+
+#wrapper .contents section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+#wrapper .contents section p {
+  position: absolute;
+  top: 50%;
+  width: 30%;
+  line-height: 1.4;
+  transform: translate(0, -50%);
+  font-size: 20px;
+  color: #fff;
+  text-shadow: 0 0 6px #666;
 }

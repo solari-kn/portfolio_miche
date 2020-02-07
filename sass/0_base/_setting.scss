@@ -4,6 +4,53 @@
 // htmlのmodは--でつなぐ
 // sassの変数はcamelCase
 // sassのミックスインは-でつなぐ
+$monts: "Montserrat", sans-serif;
+$notos: "Noto Sans JP", sans-serif;
+
+$modularscale: (
+  base: 12px,
+  ratio: $golden,
+  m: (
+    base: 14px,
+    ratio: $golden
+  ),
+  l: (
+    base: 16px,
+    ratio: $golden
+  )
+);
+
+
+// $ms-range:
+//   1.2 20em,
+//   1.333 30em,
+//   1.618 40em;
+
+/////////////////////////////////////////////////////
+// メディアクエリをミックスインで管理
+/////////////////////////////////////////////////////
+
+// モバイルファースト
+$breakpoints: (
+  s: "(min-width: 480px)",
+  ipad: "(min-width: 768px)",
+  m: "(min-width: 960px)",
+  l: "(min-width: 1280px)"
+);
+
+@mixin media($breakpoint: ipad) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    // マップにキーが有るか調べる
+    @media #{map-get($breakpoints, $breakpoint)} {
+      @content;
+    }
+  } @else {
+    // なかった場合のエラー表示
+    @error "$breakpointsにはキー #{$breakpoint} 　は存在しません";
+  }
+}
+// インクルードの後に入れ子にしてプロパティを書ける
+/////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////
 // 変数定義
@@ -62,7 +109,7 @@ $layer: (
 );
 
 // ミックスインでまとめて呼び出しを楽にする
-@mixin z-index($key) {
+@mixin z-index($key: default) {
   z-index: map-get($layer, $key);
 }
 
@@ -121,27 +168,3 @@ $layer: (
     height: 95% !important; //余白なしは100%
   }
 }
-
-/////////////////////////////////////////////////////
-// メディアクエリをミックスインで管理
-/////////////////////////////////////////////////////
-
-// モバイルファースト
-$breakpoints: (
-  s: "(min-width: 480px)",
-  ipad: "(min-width: 768px)",
-  m: "(min-width: 960px)",
-  l: "(min-width: 1280px)"
-);
-
-@mixin media($breakpoint: ipad) {
-  @if map-has-key($breakpoints, $breakpoint) {// マップにキーが有るか調べる
-    @media #{map-get($breakpoints, $breakpoint)} {
-      @content;
-    }
-  } @else {// なかった場合のエラー表示
-    @error "$breakpointsにはキー #{$breakpoint} 　は存在しません";
-  }
-}
-// インクルードの後に入れ子にしてプロパティを書ける
-/////////////////////////////////////////////////////
