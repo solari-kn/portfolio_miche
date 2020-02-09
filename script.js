@@ -29,28 +29,30 @@ var spHeight = 200;
 
 $(window).on("resize", function() {
   winW = $(window).outerWidth();
-  winH = $(window).outerHeight();
+  winH = $(window).height();
+  spH = screen.height;
   if (winW > 767) {
     $(".header_bg").css("height", winH - pcHeight + "px");
     $(".header_nav").css("height", winH - pcHeight + "px");
     $(".header_inner").css("height", pcHeight + "px");
   } else {
-    $(".header_bg").css("height", winH - spHeight + "px");
-    $(".header_nav").css("height", winH - spHeight + "px");
+    $(".header_bg").css("height", spH - spHeight + "px");
+    $(".header_nav").css("height", spH - spHeight + "px");
     $(".header_inner").css("height", spHeight + "px");
   }
 });
 
 $(function() {
   winW = $(window).outerWidth();
-  winH = $(window).outerHeight();
+  winH = $(window).height();
+  spH = screen.height;
   if (winW > 767) {
     $(".header_bg").css("height", winH - pcHeight + "px");
     $(".header_nav").css("height", winH - pcHeight + "px");
     $(".header_inner").css("height", pcHeight + "px");
   } else {
-    $(".header_bg").css("height", winH - spHeight + "px");
-    $(".header_nav").css("height", winH - spHeight + "px");
+    $(".header_bg").css("height", spH - spHeight + "px");
+    $(".header_nav").css("height", spH - spHeight + "px");
     $(".header_inner").css("height", spHeight + "px");
   }
 });
