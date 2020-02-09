@@ -19,7 +19,7 @@ var spHeight = 180;
 
 $(window).on("resize", function() {
   winW = $(window).outerWidth();
-  winH = $(window).height();
+  winH = $(window).outerheight();
   scrH = screen.height;
   spH = scrH - 50;
   if (winW > 767) {
@@ -35,7 +35,7 @@ $(window).on("resize", function() {
 
 $(function() {
   winW = $(window).outerWidth();
-  winH = $(window).height();
+  winH = $(window).outerheight();
   if (winW > 767) {
     $(".header_bg").css("height", winH - pcHeight + "px");
     $(".header_nav").css("height", winH - pcHeight + "px");
