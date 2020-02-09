@@ -3,23 +3,13 @@
 
 $(function() {
   $(".header_hmg").on("click", function() {
-    var opcVal = 1;
     if ($(".header").hasClass("open")) {
-      opcVal = 0;
       $(".header").removeClass("open");
       // openクラスを持っていた場合はメニューを閉じて、openクラスを削除
     } else {
       $(".header").addClass("open");
       // openクラスを持たない場合はopenクラスを付与
     }
-    $(".header_nav")
-      .stop()
-      .animate(
-        {
-          opacity: opcVal
-        },
-        300
-      );
   });
 });
 
@@ -30,22 +20,6 @@ var spHeight = 180;
 $(window).on("resize", function() {
   winW = $(window).outerWidth();
   winH = $(window).height();
-  scrH = screen.height
-  spH =  scrH - 50;
-  if (winW > 767) {
-    $(".header_bg").css("height", winH - pcHeight + "px");
-    $(".header_nav").css("height", winH - pcHeight + "px");
-    $(".header_inner").css("height", pcHeight + "px");
-  } else {
-    $(".header_bg").css("height", spH - spHeight + "px");
-    $(".header_nav").css("height", spH - spHeight + "px");
-    $(".header_inner").css("height", spHeight + "px");
-  }
-});
-
-$(function() {
-  winW = $(window).outerWidth();
-  winH = $(window).height();
   scrH = screen.height;
   spH = scrH - 50;
   if (winW > 767) {
@@ -53,12 +27,36 @@ $(function() {
     $(".header_nav").css("height", winH - pcHeight + "px");
     $(".header_inner").css("height", pcHeight + "px");
   } else {
-    $(".header_bg").css("height", spH - spHeight + "px");
-    $(".header_nav").css("height", spH - spHeight + "px");
+    $(".header_bg").css("height", winH - spHeight + "px");
+    $(".header_nav").css("height", winH + "px");
     $(".header_inner").css("height", spHeight + "px");
   }
 });
 
+$(function() {
+  winW = $(window).outerWidth();
+  winH = $(window).height();
+  if (winW > 767) {
+    $(".header_bg").css("height", winH - pcHeight + "px");
+    $(".header_nav").css("height", winH - pcHeight + "px");
+    $(".header_inner").css("height", pcHeight + "px");
+  } else {
+    $(".header_bg").css("height", winH - spHeight + "px");
+    $(".header_nav").css("height", winH + "px");
+    $(".header_inner").css("height", spHeight + "px");
+  }
+});
+
+// $(window).on("scroll", function() {
+//   scT = $(window).scrollTop();
+//   winH = $(window).height();
+//   if (scT > 0) {
+//     $(".header_nav").addClass("scrl");
+//     $(".scrl").css("height", winH + "px");
+//   } else {
+//     $(".header_nav").removeClass("scrl");
+//   }
+// });
 // $(window).on("resize", function() {
 //   winW = $(window).outerWidth();
 //   winH = $(window).height();
@@ -75,3 +73,5 @@ $(function() {
 //   } else {
 //   }
 // });
+
+// もし少しでもスクロールしたらポジションをfixed 高さをスクリーンいっぱいにする
