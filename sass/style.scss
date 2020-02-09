@@ -3,19 +3,86 @@
 @import "0_base/setting";
 
 .header {
+  position: relative;
   &_bg {
+    // position: relative;
     width: 100%;
     // height: 100%;
     background: url(/images/header_img.jpg) center center / cover no-repeat;
   }
+  &_trg {
+    position: absolute;
+    opacity: 1;
+    top: 0;
+    right: 0;
+    border-top: 43px solid rgba($color: #0f2540, $alpha: 0.7);
+    border-right: 70px solid rgba($color: #0f2540, $alpha: 0.7);
+    border-bottom: 43px solid transparent;
+    border-left: 70px solid transparent;
+    transition: all 500ms;
+  }
+  &_hmg {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+    @include z-index(modal);
+    span {
+      position: absolute;
+      width: 30px;
+      height: 1.5px;
+      background: #fff;
+      transition: all 500ms;
+      &:nth-child(1) {
+        top: 0;
+      }
+      &:nth-child(2) {
+        top: 10px;
+      }
+    }
+  }
+  &_nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    background: rgba($color: #0f2540, $alpha: 0.7);
+    opacity: 0;
+    @include z-index(header);
+    @include media() {
+      width: 500px;
+    }
+    ul {
+      margin: 0;
+      padding-top: 60px;
+      padding-bottom: 40px;
+      height: 100%;
+      display: flex;
+      flex-flow: column;
+      justify-content: space-between;
+    }
+    li {
+      font-size: ms(1);
+      font-family: $monts;
+      letter-spacing: normal;
+      padding: 0 30px;
+      text-align: right;
+      font-weight: 500;
+      font-size: 20px;
+      letter-spacing: 0.2em;
+      a {
+        text-decoration: none;
+        color: #fff;
+      }
+    }
+  }
   &_inner {
     width: 100%;
-    // position: absolute;
-    // bottom: -30vh
+    position: relative;
     background: #1c1c1c;
     box-shadow: 0px 16px 35px rgba(0, 0, 0, 0.5);
-
-
     &_text {
       text-align: center;
       h1 {
@@ -27,12 +94,8 @@
         margin: 0;
         // fon@include : ms(3);
         line-height: 1.3em;
-        @include media(s) {
-          font-size: ms(3,$thread: m);
-          // @include ms-respond(font-size, 3);
-        }
         @include media() {
-          font-size: ms(3,$thread:l);
+          font-size: ms(3, $thread: ipad);
         }
       }
       h3 {
@@ -42,17 +105,72 @@
         font-size: ms(0);
         margin: 0;
         letter-spacing: 1.2px;
-        @include media (s) {
-          font-size: ms(0,$thread: m);
+        @include media() {
+          font-size: ms(0, $thread: ipad);
         }
-        @include media () {
-          font-size: ms(0,$thread: l);
-        }
+      }
+    }
+    &_links {
+      margin: 20px;
+      display: flex;
+      justify-content: center;
+      a {
+        position: relative;
+        margin: 0 5px;
+        padding: 0;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        color: #fff;
+      }
+      object,
+      i {
+        position: absolute;
+        display: block;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        margin: auto;
+      }
+      object {
+        width: 20px;
+        pointer-events: none;
+      }
+      i {
+        font-size: 20px;
+      }
+      .i-mail {
+        background: #77822c;
+      }
+      .i-cart {
+        background: #009a9c;
+      }
+      .i-twt {
+        background: #1da1f2;
+      }
+      .i-inst {
+        background: #c13584;
       }
     }
   }
 }
-
+.open .header {
+  &_hmg {
+    span:nth-child(1) {
+      width: 30px;
+      // height: 1.5px;
+      transform: translate(0, 10px) rotate(45deg);
+    }
+    span:nth-child(2) {
+      width: 30px;
+      // height: 1.5px;
+      transform:  rotate(-45deg);
+    }
+  }
+  &_trg {
+    transform: translate(0,-200px) ;
+  }
+}
 .main {
   &_text {
     font-family: $notos;
@@ -114,20 +232,20 @@
 // ハンバーガーアイコンを矢印にするアニメーション
 ////////////////////////////////////////////////
 
-#wrapper .btn-gnavi.open {
+#wrapper .header_hmg.open {
   transform: rotate(180deg);
 }
 
-#wrapper .btn-gnavi.open span {
+#wrapper .header_hmg.open span {
   background: #fff;
 }
 
-#wrapper .btn-gnavi.open span:nth-child(1) {
+#wrapper .header_hmg.open span:nth-child(1) {
   width: 24px;
   transform: translate(-7px, 17px) rotate(45deg);
 }
 
-#wrapper .btn-gnavi.open span:nth-child(3) {
+#wrapper .header_hmg.open span:nth-child(3) {
   width: 24px;
   transform: translate(-7px, -17px) rotate(-45deg);
 }

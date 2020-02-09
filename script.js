@@ -2,63 +2,72 @@
 // 画像を除くDOMの読み込みが終わったらfunctionを処理する
 
 $(function() {
-  $(".btn-gnavi").on("click", function() {
-    var rightVal = 0;
+  $(".header").on("click", function() {
+    var opcVal = 1;
     if ($(this).hasClass("open")) {
-      rightVal = -300;
+      opcVal = 0;
       $(this).removeClass("open");
       // openクラスを持っていた場合はメニューを閉じて、openクラスを削除
     } else {
       $(this).addClass("open");
       // openクラスを持たない場合はopenクラスを付与
     }
-    $("#global-navi")
+    $(".header_nav")
       .stop()
       .animate(
         {
-          right: rightVal
+          opacity: opcVal
         },
-        200
+        300
       );
   });
 });
 
-$(window).on("resize", function () {
-  winW = $(window).width();
-  winH = $(window).height();
-  if (winW > 767) {
-    $(".header_bg").css("height", winH * 0.82 + "px");
-  } else {
-    $(".header_bg").css("height", winH * 0.70 + "px");
-  }
-});
-
-$(function () {
-  winW = $(window).width();
-  winH = $(window).height();
-  if (winW > 767) {
-    $(".header_bg").css("height", winH * 0.82 + "px");
-  } else {
-    $(".header_bg").css("height", winH * 0.70 + "px");
-  }
-});
+// ヘッダーインナーの高さ
+var pcHeight = 180;
+var spHeight = 200;
 
 $(window).on("resize", function() {
-  winW = $(window).width();
+  winW = $(window).outerWidth();
   winH = $(window).height();
   if (winW > 767) {
-    $(".header_inner").css("height", winH * 0.18 + "px");
+    $(".header_bg").css("height", winH - pcHeight + "px");
+    $(".header_nav").css("height", winH - pcHeight + "px");
+    $(".header_inner").css("height", pcHeight + "px");
   } else {
-    $(".header_inner").css("height", winH * 0.3 + "px");
+    $(".header_bg").css("height", winH - spHeight + "px");
+    $(".header_nav").css("height", winH - spHeight + "px");
+    $(".header_inner").css("height", spHeight + "px");
   }
 });
 
 $(function() {
-  winW = $(window).width();
+  winW = $(window).outerWidth();
   winH = $(window).height();
   if (winW > 767) {
-    $(".header_inner").css("height", winH * 0.18 + "px");
+    $(".header_bg").css("height", winH - pcHeight + "px");
+    $(".header_nav").css("height", winH - pcHeight + "px");
+    $(".header_inner").css("height", pcHeight + "px");
   } else {
-    $(".header_inner").css("height", winH * 0.3 + "px");
+    $(".header_bg").css("height", winH - spHeight + "px");
+    $(".header_nav").css("height", winH - spHeight + "px");
+    $(".header_inner").css("height", spHeight + "px");
   }
 });
+
+// $(window).on("resize", function() {
+//   winW = $(window).outerWidth();
+//   winH = $(window).height();
+//   if (winW > 767) {
+
+//   } else {
+//   }
+// });
+
+// $(function() {
+//   winW = $(window).outerWidth();
+//   winH = $(window).height();
+//   if (winW > 767) {
+//   } else {
+//   }
+// });

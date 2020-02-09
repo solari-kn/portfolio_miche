@@ -8,9 +8,14 @@ $monts: "Montserrat", sans-serif;
 $notos: "Noto Sans JP", sans-serif;
 
 $modularscale: (
-  base: 12px,
+  base: 14px,
   ratio: $golden,
-  m: (
+  ipad: (
+    base: 16px,
+    ratio: $golden
+  ),
+  m:
+  (
     base: 14px,
     ratio: $golden
   ),
@@ -19,12 +24,6 @@ $modularscale: (
     ratio: $golden
   )
 );
-
-
-// $ms-range:
-//   1.2 20em,
-//   1.333 30em,
-//   1.618 40em;
 
 /////////////////////////////////////////////////////
 // メディアクエリをミックスインで管理
