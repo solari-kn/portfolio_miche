@@ -658,11 +658,12 @@ textarea,
 
 .header_bg {
   width: 100%;
+  min-height: 320px;
   background: url(/images/header_img.jpg) center center/cover no-repeat;
 }
 
 .header_trg {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   border-top: 43px solid rgba(15, 37, 64, 0.7);
@@ -676,7 +677,7 @@ textarea,
 
 .header_hmg {
   z-index: 100;
-  position: absolute;
+  position: fixed;
   top: 20px;
   right: 20px;
   width: 30px;
@@ -703,11 +704,12 @@ textarea,
 
 .header_nav {
   z-index: 20;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   width: 100%;
-  background: rgba(15, 37, 64, 0.7);
+  min-height: 320px;
+  background: rgba(15, 37, 64, 0.8);
   opacity: 0;
 }
 

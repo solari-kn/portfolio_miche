@@ -2,14 +2,14 @@
 // 画像を除くDOMの読み込みが終わったらfunctionを処理する
 
 $(function() {
-  $(".header").on("click", function() {
+  $(".header_hmg").on("click", function() {
     var opcVal = 1;
-    if ($(this).hasClass("open")) {
+    if ($(".header").hasClass("open")) {
       opcVal = 0;
-      $(this).removeClass("open");
+      $(".header").removeClass("open");
       // openクラスを持っていた場合はメニューを閉じて、openクラスを削除
     } else {
-      $(this).addClass("open");
+      $(".header").addClass("open");
       // openクラスを持たない場合はopenクラスを付与
     }
     $(".header_nav")
@@ -25,12 +25,13 @@ $(function() {
 
 // ヘッダーインナーの高さ
 var pcHeight = 180;
-var spHeight = 200;
+var spHeight = 180;
 
 $(window).on("resize", function() {
   winW = $(window).outerWidth();
   winH = $(window).height();
-  spH = screen.height;
+  scrH = screen.height
+  spH =  scrH - 50;
   if (winW > 767) {
     $(".header_bg").css("height", winH - pcHeight + "px");
     $(".header_nav").css("height", winH - pcHeight + "px");
@@ -45,7 +46,8 @@ $(window).on("resize", function() {
 $(function() {
   winW = $(window).outerWidth();
   winH = $(window).height();
-  spH = screen.height;
+  scrH = screen.height;
+  spH = scrH - 50;
   if (winW > 767) {
     $(".header_bg").css("height", winH - pcHeight + "px");
     $(".header_nav").css("height", winH - pcHeight + "px");
