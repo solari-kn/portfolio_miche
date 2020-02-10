@@ -3,19 +3,99 @@
 @import "0_base/setting";
 
 .header {
-  position: relative;
+  // position: relative;
   &_bg {
     // position: relative;
     width: 100%;
-    transition: all 200ms;
-    min-height: 320px;
-    background: url(/images/header_img.jpg) center center / cover no-repeat;
+    margin: 0;
+    padding: 0;
+    // list-style-type: none;
+    &_slide {
+      padding: 0;
+    }
+    &_slide div {
+      height: 100%;
+      position: relative;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+    $tmp: "";
+    // 先に変数を定義する
+    @for $i from 1 through 5 {
+      @if $i < 10 {
+        $tmp: "00#{$i}";
+      } @else if $i < 100 {
+        $tmp: "0#{$i}";
+      } @else {
+        $tmp: $i;
+      }
+      // ゼロパディングの構文
+      .img#{$tmp} {
+        background-image: url(/images/image_#{$tmp}.jpg);
+      }
+    }
+    &_scrIcon {
+      position: absolute;
+      top: 50%;
+      right: 30px;
+      margin: 0;
+      filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.8));
+
+      transform: translateY(-35%);
+      @include z-index(tooltip);
+      p {
+        margin: 0;
+        margin-bottom: 10px;
+        font-family: $monts;
+        vertical-align: middle;
+        font-weight: 500;
+        font-size: ms(0);
+        color: #fff;
+        writing-mode: vertical-rl;
+        letter-spacing: 0.4em;
+        color: #fff;
+      }
+      .animeIcon {
+        position: relative;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        flex-flow: column;
+        .circle {
+          position: absolute;
+          top: -15px;
+          width: 15px;
+          height: 15px;
+          border: 3px solid #fff;
+          border-radius: 50%;
+          animation: scrlDown 2.5s ease 0s infinite normal;
+        }
+        .line {
+          position: relative;
+          top: -95px;
+          width: 2px;
+          height: 80px;
+          background: #fff;
+          animation: scrlDown 2.5s ease 0s infinite normal;
+        }
+        @keyframes scrlDown {
+          0% {
+            transform: translate3d(0, 0, 0);
+          }
+          100% {
+            transform: translate3d(0, 180px, 0);
+          }
+        }
+      }
+    }
   }
   &_trg {
     position: fixed;
     opacity: 1;
     top: 0;
     right: 0;
+    @include z-index (modal) ;
     border-top: 43px solid rgba($color: #0f2540, $alpha: 0.7);
     border-right: 70px solid rgba($color: #0f2540, $alpha: 0.7);
     border-bottom: 43px solid transparent;
@@ -44,27 +124,35 @@
       }
     }
   }
+
   &_nav {
     position: fixed;
+    visibility: hidden;
     top: 0;
-    right: 0;
+    right: 0px;
     width: 100%;
     min-height: 320px;
-    background: rgba($color: #0f2540, $alpha: 0.8);
+    background: rgba($color: #0f2540, $alpha: 0.9);
     opacity: 0;
-    transition: all 500ms;
+    transition: all 600ms;
     @include z-index(header);
     @include media() {
+      background: rgba($color: #0f2540, $alpha: 0.7);
       width: 500px;
     }
     ul {
       margin: 0;
-      padding-top: 60px;
-      padding-bottom: 40px;
+      padding: 80px 0;
+      position: relative;
       height: 100%;
       display: flex;
       flex-flow: column;
       justify-content: space-between;
+      @include media() {
+        padding-top: 120px;
+        padding-bottom: 150px;
+        padding-right: 60px;
+      }
     }
     li {
       position: relative;
@@ -75,31 +163,37 @@
       padding: 0 30px;
       text-align: right;
       font-weight: 500;
-      transition:  transform .4s ease, opacity .2s ease;
+      transition: transform 0.4s ease, opacity 0.2s ease;
       font-size: 20px;
       letter-spacing: 0.2em;
       &:nth-child(2) {
-        transition-delay: .1s;
+        transition-delay: 0.1s;
       }
       &:nth-child(3) {
-        transition-delay: .2s;
+        transition-delay: 0.2s;
       }
       &:nth-child(4) {
-        transition-delay: .3s;
+        transition-delay: 0.3s;
       }
       &:nth-child(5) {
-        transition-delay: .4s;
+        transition-delay: 0.4s;
       }
       &:nth-child(6) {
-        transition-delay: .5s;
+        transition-delay: 0.5s;
       }
       &:nth-child(7) {
-        transition-delay: .6s;
+        transition-delay: 0.6s;
       }
       a {
         text-decoration: none;
         color: #fff;
       }
+    }
+    &.scrl {
+      background: rgba($color: #0f2540, $alpha: 0.95);
+      padding: 100px 60px 100px 100px;
+      width: 600px;
+      // transform: scaleX(1.2);
     }
   }
   &_inner {
@@ -178,6 +272,7 @@
     }
   }
 }
+
 .open .header {
   &_hmg {
     span:nth-child(1) {
@@ -195,6 +290,8 @@
     transform: translate(0, -200px);
   }
   &_nav {
+    // transform: translate(-500px, 0);
+    visibility: visible;
     opacity: 1;
     li {
       opacity: 1;
@@ -202,6 +299,58 @@
     }
   }
 }
+
+.slide-dots {
+  position: absolute;
+  bottom: 20px;
+  @include z-index(header);
+  list-style-type: none;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  padding: 0;
+  @include media(l) {
+    left: 50px;
+    transform: translateX(0);
+  }
+  li {
+    margin-right: 32px;
+    &:last-child {
+      margin: 0;
+    }
+    div {
+      cursor: pointer;
+      width: 15px;
+      height: 15px;
+      // background: #fff;
+      border: 7.5px solid #fff;
+      filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.41));
+      transition: all 300ms;
+      &:hover {
+        transform: translateY(-3px);
+      }
+      @include media() {
+        width: 17px;
+        height: 17px;
+        border: 8.5px solid #fff;
+      }
+    }
+    &.slick-active div {
+      border: 2.5px solid #fff;
+      background: none;
+      &:hover {
+        transform: translateY(0px);
+      }
+      @include media() {
+        border: 3px solid #fff;
+      }
+    }
+  }
+}
+.slick-dotted.slick-slider {
+  margin-bottom: 0;
+}
+
 .main {
   &_text {
     font-family: $notos;
@@ -258,30 +407,6 @@
     }
   }
 }
-
-////////////////////////////////////////////////
-// ハンバーガーアイコンを矢印にするアニメーション
-////////////////////////////////////////////////
-
-#wrapper .header_hmg.open {
-  transform: rotate(180deg);
-}
-
-#wrapper .header_hmg.open span {
-  background: #fff;
-}
-
-#wrapper .header_hmg.open span:nth-child(1) {
-  width: 24px;
-  transform: translate(-7px, 17px) rotate(45deg);
-}
-
-#wrapper .header_hmg.open span:nth-child(3) {
-  width: 24px;
-  transform: translate(-7px, -17px) rotate(-45deg);
-}
-
-////////////////////////////////////////////////
 
 #wrapper .contents section {
   position: relative;

@@ -31,10 +31,10 @@ $modularscale: (
 
 // モバイルファースト
 $breakpoints: (
-  s: "(min-width: 480px)",
+  m: "(min-width: 480px)",
   ipad: "(min-width: 768px)",
-  m: "(min-width: 960px)",
-  l: "(min-width: 1280px)"
+  l: "(min-width: 960px)",
+  xl: "(min-width: 1280px)"
 );
 
 @mixin media($breakpoint: ipad) {
