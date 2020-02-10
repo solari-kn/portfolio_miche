@@ -942,6 +942,7 @@ textarea,
 }
 
 .header_bg_slide {
+  min-height: 370px;
   padding: 0;
 }
 
