@@ -2,7 +2,7 @@
 // 画像を除くDOMの読み込みが終わったらfunctionを処理する
 
 $(function() {
-  $(".header_hmg").on("click", function() {
+  $(".navOpen").on("click", function() {
     if ($(".header").hasClass("open")) {
       $(".header").removeClass("open");
       // openクラスを持っていた場合はメニューを閉じて、openクラスを削除
@@ -33,7 +33,7 @@ $(function () {
 })
 
 // ヘッダーインナーの高さ
-var pcHeight = 180;
+var pcHeight = 150;
 var spHeight = 180;
 
 $(window).on("resize", function() {
@@ -42,7 +42,7 @@ $(window).on("resize", function() {
   outH = $(window).outerHeight();
   scrH = screen.height;
   spH = scrH - 50;
-  if (winW > 767) {
+  if (winW > 980) {
     $(".header_bg_slide").css("height", winH - pcHeight + "px");
     $(".header_nav").css("height", winH - pcHeight + "px");
     $(".header_inner").css("height", pcHeight + "px");
@@ -56,7 +56,7 @@ $(window).on("resize", function() {
 $(function() {
   winW = $(window).outerWidth();
   winH = $(window).outerHeight();
-  if (winW > 767) {
+  if (winW > 980) {
     $(".header_bg_slide").css("height", winH - pcHeight + "px");
     $(".header_nav").css("height", winH - pcHeight + "px");
     $(".header_inner").css("height", pcHeight + "px");
@@ -71,12 +71,12 @@ $(window).on("scroll", function() {
   winW = $(window).outerWidth();
   scT = $(window).scrollTop();
   winH = $(window).height();
-  if (scT > 0 && winW > 767) {
+  if (scT > 0 && winW > 959) {
     $(".header_nav").addClass("scrl");
     $(".scrl").css("height", winH + "px");
-  } else if (winW > 767) {
+  } else if (winW > 959) {
     $(".header_nav").removeClass("scrl");
-    $(".header_nav").css("height", winH - spHeight + "px");
+    $(".header_nav").css("height", winH - pcHeight + "px");
   }
 });
 
