@@ -7,6 +7,9 @@
 $monts: "Montserrat", sans-serif;
 $notos: "Noto Sans JP", sans-serif;
 
+$footerColor :#5B622E;
+
+
 $modularscale: (
   base: 14px,
   ratio: $golden,
@@ -50,6 +53,42 @@ $breakpoints: (
 }
 // インクルードの後に入れ子にしてプロパティを書ける
 /////////////////////////////////////////////////////
+
+h1 {
+  font-family: $monts;
+  font-weight: 400;
+  font-size: ms(2);
+  letter-spacing: 0.05em;
+  @include media(l) {
+    font-size: ms(2, $thread: l);
+  }
+}
+
+h3 {
+  font-family: $monts;
+  font-weight: 300;
+  font-size: ms(1);
+  letter-spacing: 0.05em;
+  @include media(l) {
+    font-size: ms(1, $thread: l);
+  }
+}
+
+p {
+  font-family: $notos;
+  font-weight: 300;
+  font-size: ms(0);
+  letter-spacing: 0.08em;
+
+  @include media(l) {
+    font-size: ms(0, $thread: l);
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
 
 /////////////////////////////////////////////////////
 // 変数定義

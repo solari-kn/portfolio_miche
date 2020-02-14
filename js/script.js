@@ -13,7 +13,8 @@ $(function() {
   });
 });
 
-$(function () {
+
+$(function() {
   $("#slider").slick({
     customPaging: function(slider, i) {
       return $("<div>");
@@ -27,11 +28,18 @@ $(function () {
     slidesToShow: 1,
     fade: true,
     slide: ".header_bg_slide",
-    dotsClass: 'slide-dots',
+    dotsClass: "slide-dots",
     zIndex: 1
   });
-})
+});
 
+$(function() {
+  $(".header_bg_slide, .slide-dots").on("click", function() {
+    if ($(".header").hasClass("open")) {
+      $(".header").removeClass("open");
+    }
+  });
+});
 // ヘッダーインナーの高さ
 var pcHeight = 150;
 var spHeight = 180;
@@ -42,7 +50,7 @@ $(window).on("resize", function() {
   outH = $(window).outerHeight();
   scrH = screen.height;
   spH = scrH - 50;
-  if (winW > 980) {
+  if (winW > 959) {
     $(".header_bg_slide").css("height", winH - pcHeight + "px");
     $(".header_nav").css("height", winH - pcHeight + "px");
     $(".header_inner").css("height", pcHeight + "px");
@@ -56,7 +64,7 @@ $(window).on("resize", function() {
 $(function() {
   winW = $(window).outerWidth();
   winH = $(window).outerHeight();
-  if (winW > 980) {
+  if (winW > 959) {
     $(".header_bg_slide").css("height", winH - pcHeight + "px");
     $(".header_nav").css("height", winH - pcHeight + "px");
     $(".header_inner").css("height", pcHeight + "px");
