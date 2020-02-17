@@ -960,6 +960,56 @@ a {
   content: "";
 }
 
+.pfMain {
+  padding: 30px 2px;
+  background: #000;
+}
+
+.pfMain h3,
+.pfMain p {
+  margin: 0 0 0 8px;
+  color: #fff;
+}
+
+.pfMain h1 {
+  margin-top: 0;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.pfMain h3 {
+  margin-bottom: 8px;
+}
+
+.pfMain p {
+  margin-bottom: 20px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 100;
+}
+
+.pfMain_wrap {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pfMain_gallery {
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pfMain_gallery figure {
+  width: 50%;
+  margin: 0;
+  padding: 2px;
+}
+
+.pfMain_gallery figure img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
 .header_bg {
   width: 100%;
   margin: 0;
@@ -1697,7 +1747,282 @@ a {
   font-weight: 400;
 }
 
+.glHeader {
+  height: 60px;
+}
+
+.glHeader_hmg {
+  z-index: 100;
+  position: fixed;
+  top: 30px;
+  right: 15px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.glHeader_hmg p {
+  display: none;
+}
+
+.glHeader_hmg_btn {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.glHeader_hmg_btn span {
+  position: absolute;
+  width: 25px;
+  height: 2px;
+  background: #fff;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+}
+
+.glHeader_hmg_btn span:nth-child(1) {
+  top: 30%;
+}
+
+.glHeader_hmg_btn span:nth-child(2) {
+  bottom: 30%;
+}
+
+.glHeader_nav {
+  visibility: hidden;
+  z-index: 20;
+  position: fixed;
+  right: 0px;
+  bottom: 0;
+  width: 100%;
+  min-height: 320px;
+  padding-left: 20px;
+  background: #0f2540;
+  opacity: 0;
+  -webkit-transition: all 600ms;
+  transition: all 600ms;
+}
+
+.glHeader_nav ul {
+  display: -webkit-box;
+  display: flex;
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-flow: column;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+  margin: 0;
+  padding: 70px 0 40px 0;
+}
+
+.glHeader_nav li {
+  position: relative;
+  right: -300px;
+  padding: 0 30px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 22.65248px;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: normal;
+  letter-spacing: 0.2em;
+  text-align: right;
+  -webkit-transition: opacity 0.2s ease, -webkit-transform 0.4s ease;
+  transition: opacity 0.2s ease, -webkit-transform 0.4s ease;
+  transition: transform 0.4s ease, opacity 0.2s ease;
+  transition: transform 0.4s ease, opacity 0.2s ease, -webkit-transform 0.4s ease;
+}
+
+.glHeader_nav li:nth-child(2) {
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
+}
+
+.glHeader_nav li:nth-child(3) {
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+}
+
+.glHeader_nav li:nth-child(4) {
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+}
+
+.glHeader_nav li:nth-child(5) {
+  -webkit-transition-delay: 0.4s;
+          transition-delay: 0.4s;
+}
+
+.glHeader_nav li:nth-child(6) {
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+}
+
+.glHeader_nav li a {
+  color: #fff;
+}
+
+.glHeader_nav.scrl {
+  width: 600px;
+  padding: 60px 30px 80px 30px;
+  background: rgba(15, 37, 64, 0.95);
+}
+
+.glHeader_nav_text {
+  display: none;
+}
+
+.glHeader_nav_links {
+  display: -webkit-box;
+  display: flex;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-transform: translateY(320px);
+          transform: translateY(320px);
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+}
+
+.glHeader_nav_links a {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  margin: 20px 10px 20px 0;
+  padding: 0;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+}
+
+.glHeader_nav_links .iStyle,
+.glHeader_nav_links i {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: auto;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+}
+
+.glHeader_nav_links .iStyle {
+  width: 20px;
+  pointer-events: none;
+}
+
+.glHeader_nav_links i {
+  font-size: 20px;
+}
+
+.glHeader_nav_links .i-mail {
+  display: none;
+}
+
+.glHeader_nav_links .i-cart svg {
+  fill: #fff;
+}
+
+.glHeader_inner {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  background: #1c1c1c;
+  box-shadow: 0px 16px 35px rgba(0, 0, 0, 0.5);
+}
+
+.glHeader_inner_text {
+  position: relative;
+  top: 50%;
+  margin-left: 15px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.glHeader_inner_text .titleName {
+  margin: 0;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 22.65248px;
+  font-weight: 400;
+  line-height: 1em;
+}
+
+.glHeader_inner_text .titleName span {
+  margin-left: 8px;
+  font-size: 8.65248px;
+  font-weight: 300;
+}
+
+.glHeader_inner_text div {
+  display: none;
+}
+
+.glHeader_inner_text p {
+  margin: 0;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 5.34752px;
+}
+
+.glHeader_inner_text p a {
+  color: #fff;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+
+.glHeader_inner_text p a:hover {
+  color: #cccccc;
+}
+
+.open .glHeader_hmg span:nth-child(1) {
+  top: 70%;
+  -webkit-transform: translateY(-50%) rotate(45deg);
+          transform: translateY(-50%) rotate(45deg);
+}
+
+.open .glHeader_hmg span:nth-child(2) {
+  -webkit-transform: translateY(50%) rotate(-45deg);
+          transform: translateY(50%) rotate(-45deg);
+}
+
+.open .glHeader_nav {
+  visibility: visible;
+  opacity: 1;
+}
+
+.open .glHeader_nav li {
+  -webkit-transform: translate(-300px, 0);
+          transform: translate(-300px, 0);
+  opacity: 1;
+}
+
+.open .glHeader_nav_text {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.open .glHeader_nav_links {
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
 @media (min-width: 480px) {
+  .pfMain h1 {
+    font-size: 67.77709px;
+  }
+
+  .pfMain_gallery figure {
+    width: 25%;
+  }
+
   .header_trg {
     border-top: 49px solid rgba(15, 37, 64, 0.7);
     border-right: 80px solid rgba(15, 37, 64, 0.7);
@@ -1770,6 +2095,19 @@ a {
   .works_wrap br {
     display: none;
   }
+
+  .glHeader_hmg {
+    right: 18px;
+  }
+
+  .glHeader_hmg_btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .glHeader_hmg_btn span {
+    width: 40px;
+  }
 }
 
 @media (min-width: 480px) and (min-width: 960px) {
@@ -1809,6 +2147,12 @@ a {
   .main .main_flex_img {
     margin-top: 50px;
   }
+
+  .glHeader_nav ul {
+    padding-top: 120px;
+    padding-right: 60px;
+    padding-bottom: 50px;
+  }
 }
 
 @media (min-width: 960px) {
@@ -1822,6 +2166,14 @@ a {
 
   p {
     font-size: 16px;
+  }
+
+  .pfMain {
+    padding: 120px;
+  }
+
+  .pfMain_gallery figure {
+    width: 20%;
   }
 
   .header_trg {
@@ -1990,6 +2342,146 @@ a {
 
   .works_wrap p {
     font-size: 25.88854px;
+  }
+
+  .glHeader {
+    height: 80px;
+  }
+
+  .glHeader_hmg {
+    display: -webkit-box;
+    display: flex;
+    top: 40px;
+  }
+
+  .glHeader_hmg_btn {
+    width: 30px;
+    height: 30px;
+  }
+
+  .glHeader_hmg_btn span {
+    width: 30px;
+  }
+
+  .glHeader_hmg p {
+    display: block;
+    position: relative;
+    margin: auto 10px;
+    margin-top: 7.5px;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    line-height: 1;
+    cursor: pointer;
+    -webkit-transition: all 500ms;
+    transition: all 500ms;
+  }
+
+  .glHeader_nav {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-flow: column;
+    -webkit-box-pack: justify;
+            justify-content: space-between;
+    width: 600px;
+    background: #0f2540;
+  }
+
+  .glHeader_nav li {
+    font-size: 25.88854px;
+  }
+
+  .glHeader_nav ul {
+    -webkit-box-flex: 0;
+            flex: 0 0 78%;
+    padding-top: 80px;
+  }
+
+  .glHeader_nav_text {
+    display: block;
+    position: relative;
+    margin-bottom: 30px;
+    margin-left: 40px;
+    -webkit-transform: translateY(520px);
+            transform: translateY(520px);
+    -webkit-transition: all 800ms;
+    transition: all 800ms;
+  }
+
+  .glHeader_nav_text h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    font-size: 25.88854px;
+    font-weight: 400;
+  }
+
+  .glHeader_nav_text p {
+    color: #fff;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 9.88854px;
+    font-weight: 100;
+  }
+
+  .glHeader_nav_links {
+    bottom: 22%;
+    left: 60px;
+    -webkit-transform: translateY(520px);
+            transform: translateY(520px);
+  }
+
+  .glHeader_inner {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+            align-items: center;
+    height: 80px;
+  }
+
+  .glHeader_inner_text {
+    display: -webkit-box;
+    display: flex;
+    top: 0;
+    -webkit-box-align: center;
+            align-items: center;
+    margin-left: 10px;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    text-align: left;
+  }
+
+  .glHeader_inner_text .titleName {
+    padding: 0;
+    font-size: 41.88854px;
+    font-weight: 500;
+  }
+
+  .glHeader_inner_text div {
+    display: block;
+    width: 2px;
+    height: 52px;
+    margin: 0 12px;
+    background: #fff;
+  }
+
+  .glHeader_inner_text p {
+    display: block;
+    align-self: flex-end;
+    margin-bottom: 10px;
+    font-size: 9.88854px;
+  }
+
+  .open .glHeader_hmg span:nth-child(1) {
+    top: 50%;
+  }
+
+  .open .glHeader_hmg span:nth-child(2) {
+    bottom: 50%;
   }
 }
 /*# sourceMappingURL=style.css.map */

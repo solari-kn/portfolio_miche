@@ -1,18 +1,14 @@
-// $functionは$(document).ready(function()...の略
-// 画像を除くDOMの読み込みが終わったらfunctionを処理する
-
 $(function() {
   $(".navOpen").on("click", function() {
-    if ($(".header").hasClass("open")) {
-      $(".header").removeClass("open");
+    if ($(".header, .glHeader").hasClass("open")) {
+      $(".header, .glHeader").removeClass("open");
       // openクラスを持っていた場合はメニューを閉じて、openクラスを削除
     } else {
-      $(".header").addClass("open");
+      $(".header, .glHeader").addClass("open");
       // openクラスを持たない場合はopenクラスを付与
     }
   });
 });
-
 
 $(function() {
   $("#slider").slick({
@@ -22,8 +18,8 @@ $(function() {
     arrows: false,
     dots: true,
     autoplay: true,
-    autoplaySpeed: 4500,
-    speed: 800,
+    autoplaySpeed: 5000,
+    speed: 1000,
     pauseOnHover: false,
     slidesToShow: 1,
     fade: true,
@@ -41,7 +37,7 @@ $(function() {
   });
 });
 // ヘッダーインナーの高さ
-var pcHeight = 150;
+var pcHeight = 140;
 var spHeight = 180;
 
 $(window).on("resize", function() {
@@ -53,10 +49,12 @@ $(window).on("resize", function() {
   if (winW > 959) {
     $(".header_bg_slide").css("height", winH - pcHeight + "px");
     $(".header_nav").css("height", winH - pcHeight + "px");
+    $(".glHeader_nav").css("height", winH - 80 + "px");
     $(".header_inner").css("height", pcHeight + "px");
   } else {
     $(".header_bg_slide").css("height", winH - spHeight + "px");
     $(".header_nav").css("height", outH + "px");
+    $(".glHeader_nav").css("height", outH + "px");
     $(".header_inner").css("height", spHeight + "px");
   }
 });
@@ -67,10 +65,12 @@ $(function() {
   if (winW > 959) {
     $(".header_bg_slide").css("height", winH - pcHeight + "px");
     $(".header_nav").css("height", winH - pcHeight + "px");
+    $(".glHeader_nav").css("height", winH - 80 + "px");
     $(".header_inner").css("height", pcHeight + "px");
   } else {
     $(".header_bg_slide").css("height", winH - spHeight + "px");
     $(".header_nav").css("height", winH + "px");
+    $(".glHeader_nav").css("height", winH + "px");
     $(".header_inner").css("height", spHeight + "px");
   }
 });
