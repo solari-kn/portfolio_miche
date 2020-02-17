@@ -1,5 +1,5 @@
 @import "0_base/sanitize";
 @import "1_plugins/*.scss";
 @import "2_setting/setting";
+@import "4_module/*.scss";
 @import "3_pages/**";
-@import "4_module/*.scss"

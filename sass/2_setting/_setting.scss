@@ -7,8 +7,7 @@
 $monts: "Montserrat", sans-serif;
 $notos: "Noto Sans JP", sans-serif;
 
-$footerColor :#5B622E;
-
+$footerColor: #5b622e;
 
 $modularscale: (
   base: 14px,
@@ -17,13 +16,24 @@ $modularscale: (
     base: 16px,
     ratio: $golden
   ),
-  m:
-  (
+  m: (
     base: 14px,
     ratio: $golden
   ),
   l: (
     base: 16px,
+    ratio: $golden
+  ),
+  480px: (
+    base: 8px,
+    ratio: $golden
+  ),
+  960px: (
+    base: 12px,
+    ratio: $golden
+  ),
+  1600px: (
+    base: 20px,
     ratio: $golden
   )
 );
@@ -89,13 +99,9 @@ a {
   text-decoration: none;
 }
 
-
 /////////////////////////////////////////////////////
 // 変数定義
 /////////////////////////////////////////////////////
-
-$textSize: 20px;
-$mainColor: #00ff0d;
 
 /////////////////////////////////////////////////////
 // ミックスインでリンクホバーの呼び出し

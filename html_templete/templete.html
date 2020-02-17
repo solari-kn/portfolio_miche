@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <meta name="description" content="イラストレーター「みっちぇ」の-------ページ。随時更新されます。当Webサイトに掲載されている画像等の無断転載はご遠慮下さい。 It is the website of illustrator Miche. Please refrain from unauthorized reproduction of images, etc. that are posted on this website.">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/photoswipe.css">
+  <link rel="stylesheet" href="/css/default-skin/default-skin.css">
+  <link rel="icon" href="/favicon/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="/favicon//apple-touch-icon-180x180.png" sizes="180x180">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:100,300&display=swap" rel="stylesheet">
+  <!-- ogp -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="miche - illustrater | PORTFOLIO">
+  <meta property="og:description" content="イラストレーター「みっちぇ」の-------ページ。随時更新されます。当Webサイトに掲載されている画像等の無断転載はご遠慮下さい。 It is the website of illustrator Miche. Please refrain from unauthorized reproduction of images, etc. that are posted on this website.">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:image:alt" content="みっちぇのイラスト">
+  <meta property="og:site_name" content="miche - illustrater">
+  <!-- facebook -->
+  <!-- <meta property="fb:app_id" content=""> -->
+  <!-- twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@mittye97">
+  <!-- /ogp -->
+  <script src="/js/svgxuse.js"></script>
+  <script src="js/intersection-observer.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+      if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              let lazyImage = entry.target;
+              lazyImage.src = lazyImage.dataset.src;
+              if (typeof lazyImage.dataset.srcset === "undefined") {
+              } else {
+                lazyImage.srcset = lazyImage.dataset.srcset;
+              }
+              lazyImage.classList.remove("lazy");
+              lazyImageObserver.unobserve(lazyImage);
+            }
+          });
+        });
+        lazyImages.forEach(function (lazyImage) {
+          lazyImageObserver.observe(lazyImage);
+        });
+      } else {
+        // Possibly fall back to a more compatible method here
+      }
+    });
+  </script>
+  <script src="https://kit.fontawesome.com/0cb2ef8f5e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="glHeader">
+    <div class="glHeader_hmg">
+      <p class="navOpen">MENU</p>
+      <div class="glHeader_hmg_btn navOpen">
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <nav class="glHeader_nav">
+      <ul>
+        <li><a href="/portfolio.html">Portfolio</a></li>
+        <li><a href="/works.html">Works</a></li>
+        <li><a href="/show.html">Show</a></li>
+        <li><a href="https://miche.booth.pm" target="_blank">Store</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+      <div class="glHeader_nav_text">
+        <h3>READ_ME</h3>
+        <p>イラストレーター”みっちぇ”のポートフォリオです。</p>
+        <p>合同会社亡霊工房とマネージメントを結んでおります。</p>
+        <p>当Webサイトに掲載されている画像等の無断転載はご遠慮下さい。</p>
+      </div>
+      <div class="glHeader_nav_links">
+        <a class="i-cart" href="https://miche.booth.pm" target="_blank">
+          <svg class="iStyle">
+            <use xlink:href="/svg/symbol-defs.svg#icon-cart"></use>
+          </svg>
+        </a>
+        <a class="i-blog" href="https://micheartblog.blogspot.com" target="_blank">
+          <i class="fab fa-blogger-b"></i>
+        </a>
+        <a class="i-twt" href="https://twitter.com/mittye97" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a class="i-inst" href="https://www.instagram.com/miche_osw/" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </nav>
+    <nav class="glHeader_inner">
+      <div class="glHeader_inner_text">
+        <a class="titleName" href="/index.html">miche</a>
+        <div></div>
+        <p>ILLUSTRATOR / <a href="http://boureikoubou.com" target="_blank">BOUREI-KOUBOU</a></p>
+      </div>
+    </nav>
+  </header>
+  <footer class="footer">
+    <div class="footer_sign">
+      <svg class="iStyle">
+        <use xlink:href="/svg/symbol-defs.svg#icon-signature"></use>
+      </svg>
+    </div>
+    <div class="footer_contact">
+      <a class="i-mail" href="/contact.html" target="_blank">
+        <svg class="iStyle">
+          <use xlink:href="/svg/symbol-defs.svg#icon-mail-line"></use>
+        </svg>
+        <p>CONTACT</p>
+      </a>
+    </div>
+    <div class="footer_bd"></div>
+    <div class="footer_links">
+      <a class="i-cart" href="https://miche.booth.pm" target="_blank">
+        <svg class="iStyle cart">
+          <use xlink:href="/svg/symbol-defs.svg#icon-cart"></use>
+        </svg>
+      </a>
+      <a class="i-blog" href="https://micheartblog.blogspot.com" target="_blank">
+        <i class="fab fa-blogger-b"></i>
+      </a>
+      <a class="i-twt" href="https://twitter.com/mittye97" target="_blank">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a class="i-inst" href="https://www.instagram.com/miche_osw/" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+    <div class="footer_bd"></div>
+    <div class="small"><small>© All rights reserved.</small></div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="/js/slick.min.js"></script>
+  <script src="/js/photoswipe.min.js"></script>
+  <script src="/js/photoswipe-ui-default.min.js"></script>
+  <script src="/js/photoswipe-simplify.min.js"></script>
+  <script charset="utf-8">
+    photoswipeSimplify.init({
+      showHideOpacity: true,
+    });
+  </script>
+  <script src="/js/script.js"></script>
+</body>
+</html>
