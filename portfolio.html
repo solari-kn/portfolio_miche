@@ -27,33 +27,33 @@
   <meta name="twitter:site" content="@mittye97">
   <!-- /ogp -->
   <script src="/js/svgxuse.js"></script>
-  <script src="js/intersection-observer.js"></script>
+  <!-- <script src="js/intersection-observer.js"></script> -->
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+    // document.addEventListener("DOMContentLoaded", function () {
+    //   var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
 
-      if ("IntersectionObserver" in window) {
-        let lazyImageObserver = new IntersectionObserver(function (entries, observer) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              let lazyImage = entry.target;
-              lazyImage.src = lazyImage.dataset.src;
-              if (typeof lazyImage.dataset.srcset === "undefined") {
-              } else {
-                lazyImage.srcset = lazyImage.dataset.srcset;
-              }
-              lazyImage.classList.remove("lazy");
-              lazyImageObserver.unobserve(lazyImage);
-            }
-          });
-        });
-        lazyImages.forEach(function (lazyImage) {
-          lazyImageObserver.observe(lazyImage);
-        });
-      } else {
-        // Possibly fall back to a more compatible method here
-      }
-    });
+    //   if ("IntersectionObserver" in window) {
+    //     let lazyImageObserver = new IntersectionObserver(function (entries, observer) {
+    //       entries.forEach(function (entry) {
+    //         if (entry.isIntersecting) {
+    //           let lazyImage = entry.target;
+    //           lazyImage.src = lazyImage.dataset.src;
+    //           if (typeof lazyImage.dataset.srcset === "undefined") {
+    //           } else {
+    //             lazyImage.srcset = lazyImage.dataset.srcset;
+    //           }
+    //           lazyImage.classList.remove("lazy");
+    //           lazyImageObserver.unobserve(lazyImage);
+    //         }
+    //       });
+    //     });
+    //     lazyImages.forEach(function (lazyImage) {
+    //       lazyImageObserver.observe(lazyImage);
+    //     });
+    //   } else {
+    //     // Possibly fall back to a more compatible method here
+    //   }
+    // });
   </script>
   <script src="https://kit.fontawesome.com/0cb2ef8f5e.js" crossorigin="anonymous"></script>
 </head>
