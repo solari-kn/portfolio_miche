@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WORKS | miche - illustrater</title>
+  <meta name="description" content="イラストレーター「みっちぇ」の実績一覧。随時更新されます。当Webサイトに掲載されている画像等の無断転載はご遠慮下さい。 It is the website of illustrator Miche. Please refrain from unauthorized reproduction of images, etc. that are posted on this website.">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/photoswipe.css">
+  <link rel="stylesheet" href="/css/default-skin/default-skin.css">
+  <link rel="icon" href="/favicon/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="/favicon//apple-touch-icon-180x180.png" sizes="180x180">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:100,300&display=swap" rel="stylesheet">
+  <!-- ogp -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="miche - illustrater | PORTFOLIO">
+  <meta property="og:description" content="イラストレーター「みっちぇ」の-------ページ。随時更新されます。当Webサイトに掲載されている画像等の無断転載はご遠慮下さい。 It is the website of illustrator Miche. Please refrain from unauthorized reproduction of images, etc. that are posted on this website.">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:image:alt" content="みっちぇのイラスト">
+  <meta property="og:site_name" content="miche - illustrater">
+  <!-- facebook -->
+  <!-- <meta property="fb:app_id" content=""> -->
+  <!-- twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@mittye97">
+  <!-- /ogp -->
+  <script src="/js/svgxuse.js"></script>
+  <script src="js/intersection-observer.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+      if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              let lazyImage = entry.target;
+              lazyImage.src = lazyImage.dataset.src;
+              if (typeof lazyImage.dataset.srcset === "undefined") {
+              } else {
+                lazyImage.srcset = lazyImage.dataset.srcset;
+              }
+              lazyImage.classList.remove("lazy");
+              lazyImageObserver.unobserve(lazyImage);
+            }
+          });
+        });
+        lazyImages.forEach(function (lazyImage) {
+          lazyImageObserver.observe(lazyImage);
+        });
+      } else {
+        // Possibly fall back to a more compatible method here
+      }
+    });
+  </script>
+  <script src="https://kit.fontawesome.com/0cb2ef8f5e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="glHeader">
+    <div class="glHeader_hmg">
+      <p class="navOpen">MENU</p>
+      <div class="glHeader_hmg_btn navOpen">
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <nav class="glHeader_nav">
+      <ul>
+        <li><a href="/portfolio.html">Portfolio</a></li>
+        <li><a href="/works.html">Works</a></li>
+        <li><a href="/show.html">Show</a></li>
+        <li><a href="https://miche.booth.pm" target="_blank">Store</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+      <div class="glHeader_nav_text">
+        <h3>READ_ME</h3>
+        <p>イラストレーター”みっちぇ”のポートフォリオです。</p>
+        <p>合同会社亡霊工房とマネージメントを結んでおります。</p>
+        <p>当Webサイトに掲載されている画像等の無断転載はご遠慮下さい。</p>
+      </div>
+      <div class="glHeader_nav_links">
+        <a class="i-cart" href="https://miche.booth.pm" target="_blank">
+          <svg class="iStyle">
+            <use xlink:href="/svg/symbol-defs.svg#icon-cart"></use>
+          </svg>
+        </a>
+        <a class="i-blog" href="https://micheartblog.blogspot.com" target="_blank">
+          <i class="fab fa-blogger-b"></i>
+        </a>
+        <a class="i-twt" href="https://twitter.com/mittye97" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a class="i-inst" href="https://www.instagram.com/miche_osw/" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </nav>
+    <nav class="glHeader_inner">
+      <div class="glHeader_inner_text">
+        <a class="titleName" href="/index.html">miche</a>
+        <div></div>
+        <p>ILLUSTRATOR / <a href="http://boureikoubou.com" target="_blank">BOUREI-KOUBOU</a></p>
+      </div>
+    </nav>
+  </header>
+  <div class="glbg">
+    <div class="glbg_co">
+      <h1>WORKS</h1>
+    </div>
+    <div class="glbg_scrIcon">
+      <p>SCROLL</p>
+      <div class="animeIcon">
+        <div class="circle"></div>
+        <div class="line"></div>
+      </div>
+    </div>
+  </div>
+  <main class="woMain">
+    <h3>Personal works <span>-個人制作-</span></h3>
+    <div class="woMain_vimeo">
+      <div><iframe src="https://player.vimeo.com/video/313386678" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+      <div><iframe src="https://player.vimeo.com/video/252053025" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+    </div>
+    <!-- /////////////////////////////////////////////////// -->
+    <h3>Works <span>-実績-</span></h3>
+    <!-- /////////////////////////////////////////////////// -->
+    <h4>Books -書籍、装画-</h4>
+    <div class="woMain_works">
+      <div class="woMain_works_inner">
+        <a href="https://www.hanmoto.com/bd/isbn/9784153350465"><img src="images/works/book01.jpg" alt=""></a>
+        <div>
+          <p class="bookTitle">荒潮</p>
+          <p>新☆ハヤカワ・SF・シリーズ</p>
+          <ul>
+            <li>陳楸帆(著/文)</li>
+            <li>中原尚哉(翻訳)</li>
+            <li>発売日: 2020年1月23日</li>
+            <li>出版: 早川書房</li>
+            <li>装丁: 川名潤</li>
+          </ul>
+        </div>
+      </div>
+      <div class="woMain_works_inner">
+        <a target="_blank" href="http://www.kadokawaharuki.co.jp/book/detail/detail.php?no=6134"><img src="images/works/book03.jpg" alt=""></a>
+        <div>
+          <p class="bookTitle">ブラックシープ・キーパー</p>
+          <p>単行本</p>
+          <ul>
+            <li>柿本みづほ(著/文)</li>
+            <li>発売: 2019年10月2日</li>
+            <li>出版: 角川春樹事務所</li>
+            <li>装丁: 川谷康久</li>
+            <li>装画: みっちぇ</li>
+          </ul>
+        </div>
+      </div>
+      <div class="woMain_works_inner">
+        <a target="_blank" href="http://www.kawade.co.jp/np/isbn/9784309028071/"><img src="images/works/book02.jpg" alt=""></a>
+        <div>
+          <p class="bookTitle">さよならの儀式</p>
+          <p>単行本</p>
+          <ul>
+            <li>宮部みゆき(著/文)</li>
+            <li>発売: 2019年7月11日</li>
+            <li>出版: 河出書房新社</li>
+            <li>装丁: 川名潤</li>
+            <li>装画: みっちぇ</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- /////////////////////////////////////////////////// -->
+    <h4>Project -企画-</h4>
+    <div class="woMain_works">
+      <div class="woMain_works_inner">
+        <a target="_blank" href="http://kotodama.themoonstudio.jp/"><img src="images/works/proj01.jpg" alt=""></a>
+        <div>
+          <p class="bookTitle">KOTODAMA TRIBE</p>
+          <p>ver0.5(2018'12)</p>
+          <ul>
+            <li>Background concept art</li>
+            <li>2019'09’30 end</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- /////////////////////////////////////////////////// -->
+    <h4>Media -情報媒体-</h4>
+    <div class="woMain_works">
+      <div class="woMain_works_text">
+        <p class="bookTitle">CGWORLD.jp</p>
+        <p>CG・映像の専門サイト CGWORLD.jpにてインタビュー記事を掲載</p>
+        <a href="https://cgworld.jp/interview/201810-miche.html"><button><p>More</></button></a>
+      </div>
+      <div class="woMain_works_inner">
+        <div>
+        </div>
+      </div>
+      <div class="woMain_works_inner">
+        <a target="_blank" href="http://shop.cgworld.jp/shopdetail/000000000674/"><img src="images/works/media03.jpg" alt=""></a>
+        <div>
+          <p class="bookTitle">CGWORLD vol.247</p>
+          <p>第一特集『ReVdol！』</p>
+          <ul>
+            <li>MV 「Pre-STAR」</li>
+            <li>コンセプトアート掲載</li>
+          </ul>
+        </div>
+      </div>
+      <div class="woMain_works_inner">
+        <a target="_blank" href="https://illustration.media/"><img src="images/works/media02.jpg" alt=""></a>
+        <div>
+          <p class="bookTitle">ILLUSTRATION 2019</p>
+          <ul>
+            <li>イラスト掲載</li>
+          </ul>
+        </div>
+      </div>
+      <div class="woMain_works_inner">
+        <a target="_blank" href="https://books.mdn.co.jp/magazine/3218101009/"><img src="images/works/media01.jpg" alt=""></a>
+        <div>
+          <p class="bookTitle">月間MdN 2018年9月号</p>
+          <ul>
+            <li>「創る。」のコーナーにて制作過程を掲載</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- /////////////////////////////////////////////////// -->
+    <h4>Music Art -音楽ジャケットアートワーク等-</h4>
+    <div class="woMain_iframe">
+      <div class="woMain_iframe_inner">
+        <iframe allow="autoplay *; encrypted-media *;" frameborder="0" height="100%" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/jp/album/%E3%83%A6%E3%83%A2%E3%83%AC%E3%82%B9%E3%82%AB-1-single/1438856043"></iframe>
+      </div>
+      <div class="woMain_iframe_inner">
+        <iframe allow="autoplay *; encrypted-media *;" frameborder="0" height="100%" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/jp/album/%E3%83%A6%E3%83%A2%E3%83%AC%E3%82%B9%E3%82%AB-2-single/1443472550"></iframe>
+      </div>
+      <div class="woMain_iframe_inner">
+        <iframe style="border: 0; max-width: 350px; width: 100%; height: 500px;" src="https://bandcamp.com/EmbeddedPlayer/album=1213115861/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless=""><a href="http://ququ-hachiju.bandcamp.com/album/--3">想いでは砂のように by Ququ Hachiju</a></iframe>
+      </div>
+      <div class="woMain_iframe_inner">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/kI51yVUs4DQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="woMain_iframe_inner">
+        <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/551189322&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true">
+        </iframe>
+      </div>
+      <div class="woMain_iframe_inner">
+        <iframe allow="autoplay *; encrypted-media *;" frameborder="0" height="100%" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/jp/album/%E3%83%A6%E3%83%A2%E3%83%AC%E3%82%B9%E3%82%AB-3-single/1446238674"></iframe>
+      </div>
+      <div class="woMain_iframe_inner">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/qLfrQK2gf2s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="woMain_iframe_inner">
+        <iframe style="border: 0; max-width: 350px; width: 100%; height: 500px;" src="https://bandcamp.com/EmbeddedPlayer/album=2456436938/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless=""><a href="http://fractaldreamers.bandcamp.com/album/everything-for-a-dream">Everything for a Dream by Fractal Dreamers</a></iframe>
+      </div>
+      <div class="woMain_iframe_inner">
+        <iframe style="border: 0; max-width: 350px; width: 100%; height: 470px;" src="https://bandcamp.com/EmbeddedPlayer/album=926933222/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless=""><a href="http://fractaldreamers.bandcamp.com/album/kingdom-of-silence-ep">Kingdom of Silence EP by Fractal Dreamers</a></iframe>
+      </div>
+      <div class="woMain_iframe_inner">
+        <iframe style="border: 0; max-width: 350px; width: 100%; height: 470px;" src="https://bandcamp.com/EmbeddedPlayer/album=1880093657/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless=""><a href="http://ququ-hachiju.bandcamp.com/album/ep-2">ソラの旅人 EP by Ququ Hachiju</a></iframe>
+      </div>
+    </div>
+    <!-- /////////////////////////////////////////////////// -->
+    <h4>MOVIE -映像-</h4>
+    <div class="woMain_iframe">
+      <div class="woMain_iframe_inner">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/FHPJCsb3y58" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p>[Music video]</p>
+        <p>Art</p>
+      </div>
+      <div class="woMain_iframe_inner">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/MvrrbsfClfU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p>[Music video]</p>
+        <p>Art</p>
+      </div>
+      <div class="woMain_iframe_inner">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/YKwWrJhpLA8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p>[Music video]</p>
+        <p>Art</p>
+      </div>
+      <div class="woMain_iframe_inner">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/pB7BX6MPySc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p>[Music video]</p>
+        <p>Concept Art</p>
+      </div>
+      <div class="woMain_iframe_inner">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/FXZ4mDJovzM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p>[Music video]</p>
+        <p>Concept Art</p>
+      </div>
+      <div class="woMain_iframe_inner">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/CUnIza2lr90" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p>[Music video]</p>
+        <ul>
+          <li>Concept art</li>
+          <li>Background art</li>
+        </ul>
+      </div>
+      <div class="woMain_iframe_inner">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/BYujFx1jEFk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p>[TV animation]</p>
+        <ul>
+          <li>Ending [CG Part]</li>
+          <li>Concept art</li>
+        </ul>
+      </div>
+      <div class="woMain_iframe_inner">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/EfNfw_XWrdo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p>[TV animation]</p>
+        <ul>
+          <li>EP40,46,52,58,[4th OP/ED]</li>
+          <li>Background art</li>
+        </ul>
+      </div>
+      <div class="woMain_iframe_inner">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/Uf09ht8egEc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p>[Web movie]</p>
+        <p>Background art</p>
+      </div>
+      <div class="woMain_iframe_inner">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/pq7XWSZzDbM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p>[Music video]</p>
+        <p>Background art</p>
+      </div>
+      <div class="woMain_iframe_inner">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/G_24WzUxKms" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p>[Music video]</p>
+        <ul>
+          <li>Background art</li>
+          <li>Character animation</li>
+        </ul>
+      </div>
+      <div class="woMain_iframe_inner">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/EG8TUKnBIcQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p>[Music video]</p>
+        <p>Background art</p>
+      </div>
+      <div class="woMain_iframe_inner">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/SiCsM9Ch_dY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p>[Music video]</p>
+        <p>Mat paint</p>
+      </div>
+      <div class="woMain_iframe_inner">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/Vu6a3DXZ1IM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p>[Web movie]</p>
+        <p>Background art</p>
+      </div>
+      <div class="woMain_iframe_inner">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/TmEdJI8A76A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p>[Music video]</p>
+        <ul>
+          <li>2D art</li>
+          <li>Concept art</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="footer_sign">
+      <svg class="iStyle">
+        <use xlink:href="/svg/symbol-defs.svg#icon-signature"></use>
+      </svg>
+    </div>
+    <div class="footer_contact">
+      <a class="i-mail" href="/contact.html" target="_blank">
+        <svg class="iStyle">
+          <use xlink:href="/svg/symbol-defs.svg#icon-mail-line"></use>
+        </svg>
+        <p>CONTACT</p>
+      </a>
+    </div>
+    <div class="footer_bd"></div>
+    <div class="footer_links">
+      <a class="i-cart" href="https://miche.booth.pm" target="_blank">
+        <svg class="iStyle cart">
+          <use xlink:href="/svg/symbol-defs.svg#icon-cart"></use>
+        </svg>
+      </a>
+      <a class="i-blog" href="https://micheartblog.blogspot.com" target="_blank">
+        <i class="fab fa-blogger-b"></i>
+      </a>
+      <a class="i-twt" href="https://twitter.com/mittye97" target="_blank">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a class="i-inst" href="https://www.instagram.com/miche_osw/" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+    <div class="footer_bd"></div>
+    <div class="small"><small>© All rights reserved.</small></div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://player.vimeo.com/api/player.js"></script>
+
+  <script src="/js/slick.min.js"></script>
+  <script src="/js/photoswipe.min.js"></script>
+  <script src="/js/photoswipe-ui-default.min.js"></script>
+  <script src="/js/photoswipe-simplify.min.js"></script>
+  <script charset="utf-8">
+    photoswipeSimplify.init({
+      showHideOpacity: true,
+    });
+  </script>
+  <script src="/js/script.js"></script>
+</body>
+</html>

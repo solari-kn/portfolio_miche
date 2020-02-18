@@ -317,7 +317,7 @@
     margin: 0;
     opacity: 0;
     // transform: translate(-50%, -50%);
-    animation: fadeIn 1200ms ease 300ms forwards;
+    animation: fadeIn 1200ms ease 800ms forwards;
     position: absolute;
     text-shadow: 3px 3px 22px rgba(0, 0, 0, 0.6);
     @include ms-respond(font-size, 4);

@@ -1353,8 +1353,8 @@ a {
   font-weight: 500;
   text-align: center;
   text-shadow: 3px 3px 22px rgba(0, 0, 0, 0.6);
-  -webkit-animation: fadeIn 1200ms ease 300ms forwards;
-          animation: fadeIn 1200ms ease 300ms forwards;
+  -webkit-animation: fadeIn 1200ms ease 800ms forwards;
+          animation: fadeIn 1200ms ease 800ms forwards;
   opacity: 0;
 }
 
@@ -1496,7 +1496,7 @@ a {
 .abMain {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 10px 10px;
+  padding: 30px 10px;
   background: #e4e4e4;
 }
 
@@ -1561,27 +1561,16 @@ a {
 
 .coMain {
   max-width: 1200px;
-  min-height: 500px;
+  min-height: 300px;
   margin: 0 auto;
-  padding: 10px 10px;
+  padding: 50px 10px;
   background: #e4e4e4;
+  text-align: center;
+  vertical-align: middle;
 }
 
 .coMain p {
   font-weight: 100;
-}
-
-.coMain ul li {
-  margin: 0.5em 0;
-  font-family: "Noto Sans JP", sans-serif;
-  font-size: 14px;
-  font-weight: 100;
-  letter-spacing: 0.08em;
-  list-style-type: none;
-}
-
-.coMain ul {
-  padding-left: 20px;
 }
 
 .coMain span {
@@ -1589,30 +1578,15 @@ a {
   font-weight: 500;
 }
 
-.coMain h1 {
-  margin: 20px 0;
-  font-size: 36.65248px;
-}
-
-.coMain h3 {
+.coMain h2 {
+  font-family: "Montserrat", sans-serif;
   font-size: 22.65248px;
-  font-weight: 400;
-}
-
-.coMain h4 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 14px;
   font-weight: 500;
 }
 
-.coMain .name {
-  font-family: "Montserrat", sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.coMain .pMargin {
-  margin-left: 10px;
+.coMain h2 a {
+  color: #5b622e;
+  text-decoration: underline;
 }
 
 .pfMain {
@@ -2264,6 +2238,142 @@ a {
   font-weight: 500;
 }
 
+.glbg_co {
+  display: -webkit-box;
+  display: flex;
+  z-index: 0;
+  position: relative;
+  bottom: 0;
+  -webkit-box-align: center;
+          align-items: center;
+  width: 100%;
+  min-height: 100%;
+  background-image: url(/images/gallery/2020/img001.jpg);
+  background-position: bottom 30% center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.woMain {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 30px 10px;
+  background: #e4e4e4;
+}
+
+.woMain p {
+  font-weight: 100;
+}
+
+.woMain ul li {
+  margin: 0.5em 0;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 14px;
+  font-weight: 100;
+  letter-spacing: 0.08em;
+  list-style-type: none;
+}
+
+.woMain ul {
+  padding: 0;
+}
+
+.woMain span {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 22.65248px;
+  font-weight: 300;
+}
+
+.woMain h3 {
+  margin: 40px 0;
+  font-size: 22.65248px;
+  font-weight: 400;
+}
+
+.woMain h4 {
+  margin-left: 1em;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 22.65248px;
+  font-weight: 500;
+}
+
+.woMain_vimeo {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  width: 100%;
+}
+
+.woMain_vimeo div {
+  position: relative;
+  width: 100%;
+  margin: 20px 0;
+  padding: 56.25% 0 0 0;
+}
+
+.woMain_works {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.woMain_works_text {
+  margin-left: 30px;
+}
+
+.woMain_works_text button {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 0.5em 20px;
+  border: 2px solid #000;
+  border-radius: 20px;
+  background: none;
+  cursor: pointer;
+}
+
+.woMain_works_text button p {
+  margin: 0;
+  color: #000;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.woMain_works_inner {
+  margin: 50px 0;
+}
+
+.woMain_works_inner img {
+  width: 100%;
+}
+
+.woMain .bookTitle {
+  margin-bottom: 15px;
+  font-size: 22.65248px;
+}
+
+.woMain_iframe {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-align: center;
+          align-items: center;
+}
+
+.woMain_iframe_inner {
+  width: 100%;
+  height: 500px;
+  padding: 40px 0px;
+  text-align: center;
+}
+
+.woMain_iframe_inner iframe {
+  max-width: 480px;
+}
+
 @media (min-width: 480px) {
   .glHeader_hmg {
     right: 18px;
@@ -2302,11 +2412,6 @@ a {
 
   .coMain {
     padding: 50px 80px;
-  }
-
-  .coMain h1 {
-    display: none;
-    font-size: 67.77709px;
   }
 
   .pfMain h1 {
@@ -2388,6 +2493,36 @@ a {
 
   .works_wrap br {
     display: none;
+  }
+
+  .woMain {
+    padding: 50px 40px;
+  }
+
+  .woMain h3 {
+    font-size: ms;
+  }
+
+  .woMain h4 {
+    font-size: 22.65248px;
+  }
+
+  .woMain_works {
+    width: 100%;
+    max-width: 700px;
+  }
+
+  .woMain_works_inner {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: justify;
+            justify-content: space-between;
+  }
+
+  .woMain_works_inner div {
+    width: 50%;
+    margin: 0 20px;
+    text-align: right;
   }
 }
 
@@ -2604,19 +2739,7 @@ a {
     font-size: 25.88854px;
   }
 
-  .coMain ul li {
-    font-size: 16px;
-  }
-
-  .coMain h3 {
-    font-size: 41.88854px;
-  }
-
-  .coMain h4 {
-    font-size: 25.88854px;
-  }
-
-  .coMain .name {
+  .coMain h2 {
     font-size: 25.88854px;
   }
 
@@ -2794,6 +2917,74 @@ a {
 
   .works_wrap p {
     font-size: 25.88854px;
+  }
+
+  .woMain ul li {
+    font-size: 16px;
+  }
+
+  .woMain span {
+    font-size: 25.88854px;
+  }
+
+  .woMain h3 {
+    font-size: 41.88854px;
+  }
+
+  .woMain h4 {
+    font-size: 25.88854px;
+  }
+
+  .woMain_vimeo {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+            flex-direction: row;
+  }
+
+  .woMain_vimeo div {
+    width: 50%;
+    margin: 10px;
+    padding: 28.12% 0 0 0;
+  }
+
+  .woMain_works {
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 98%;
+  }
+
+  .woMain_works_text button p {
+    font-size: 16px;
+  }
+
+  .woMain_works_inner {
+    width: 50%;
+  }
+
+  .woMain_works_inner div {
+    text-align: left;
+  }
+
+  .woMain .bookTitle {
+    font-size: 16px;
+    font-weight: 300;
+  }
+
+  .woMain_iframe {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+            flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .woMain_iframe_inner {
+    width: 50%;
+    height: 550px;
+    padding: 40px 20px;
+    text-align: center;
   }
 }
 
