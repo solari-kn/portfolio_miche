@@ -27,7 +27,6 @@
   <meta name="twitter:site" content="@mittye97">
   <!-- /ogp -->
   <script src="/js/svgxuse.js"></script>
-  <!-- <script src="js/intersection-observer.js"></script> -->
   <script>
     // document.addEventListener("DOMContentLoaded", function () {
     //   var lozadImages = [].slice.call(document.querySelectorAll("img.lozad"));
@@ -308,6 +307,7 @@
     <div class="footer_bd"></div>
     <div class="small"><small>© All rights reserved.</small></div>
   </footer>
+  <script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script src="/js/slick.min.js"></script>
   <script src="/js/photoswipe.min.js"></script>
@@ -316,10 +316,12 @@
   <script charset="utf-8">
     photoswipeSimplify.init({
       showHideOpacity: true,
+      history: false
     });
   </script>
   <script src="/js/script.js"></script>
 </body>
+<script src="js/intersection-observer.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
 <script>
   const observer = lozad();
