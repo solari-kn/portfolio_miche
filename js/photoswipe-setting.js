@@ -154,7 +154,6 @@
       options = {
         showAnimationDuration: 0,
         showHideOpacity: true,
-        preload: [0,0],
         galleryUID: galleryElement.getAttribute("data-pswp-uid"),
 
         getThumbBoundsFn: function(index) {
@@ -236,9 +235,9 @@
         if (item.h < 1 || item.w < 1) {
           var img = new Image();
           img.onload = function() {
-            item.w = this.width;
-            item.h = this.height;
-            gallery.invalidateCurrItems();
+            item.w = this.naturalWidth;
+            item.h = this.naturalHeight;
+            // gallery.invalidateCurrItems();
             gallery.updateSize(true);
           };
           img.src = item.src;
