@@ -154,6 +154,7 @@
       options = {
         showAnimationDuration: 0,
         showHideOpacity: true,
+        preload: [0,0],
         galleryUID: galleryElement.getAttribute("data-pswp-uid"),
 
         getThumbBoundsFn: function(index) {
