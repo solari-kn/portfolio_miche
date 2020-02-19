@@ -10,24 +10,7 @@ $(function() {
   });
 });
 
-$(function() {
-  $("#slider").slick({
-    customPaging: function(slider, i) {
-      return $("<div>");
-    },
-    arrows: false,
-    dots: true,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    speed: 1000,
-    pauseOnHover: false,
-    slidesToShow: 1,
-    fade: true,
-    slide: ".header_bg_slide",
-    dotsClass: "slide-dots",
-    zIndex: 1
-  });
-});
+
 
 $(function() {
   $(".header_bg_slide, .slide-dots, .pfMain").on("click", function() {
@@ -36,11 +19,13 @@ $(function() {
     }
   });
 });
+
 // ヘッダーインナーの高さ
 var pcHeight = 140;
 var spHeight = 180;
 var pcglHeight = 80;
 var spglHeight = 60;
+
 
 $(window).on("resize", function() {
   winW = $(window).outerWidth();
@@ -93,5 +78,3 @@ $(window).on("scroll", function() {
     $(".header_nav").css("height", winH - pcHeight + "px");
   }
 });
-
-// もし少しでもスクロールしたらポジションをfixed 高さをスクリーンいっぱいにする

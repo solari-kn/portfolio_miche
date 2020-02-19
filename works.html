@@ -14,8 +14,8 @@
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:100,300&display=swap" rel="stylesheet">
   <!-- ogp -->
   <meta property="og:type" content="article">
-  <meta property="og:title" content="miche - illustrater | PORTFOLIO">
-  <meta property="og:description" content="イラストレーター「みっちぇ」の-------ページ。随時更新されます。当Webサイトに掲載されている画像等の無断転載はご遠慮下さい。 It is the website of illustrator Miche. Please refrain from unauthorized reproduction of images, etc. that are posted on this website.">
+  <meta property="og:title" content="WORKS | miche - illustrater">
+  <meta property="og:description" content="イラストレーター「みっちぇ」の実績一覧。随時更新されます。当Webサイトに掲載されている画像等の無断転載はご遠慮下さい。 It is the website of illustrator Miche. Please refrain from unauthorized reproduction of images, etc. that are posted on this website.">
   <meta property="og:url" content="">
   <meta property="og:image" content="">
   <meta property="og:image:alt" content="みっちぇのイラスト">
@@ -27,34 +27,6 @@
   <meta name="twitter:site" content="@mittye97">
   <!-- /ogp -->
   <script src="/js/svgxuse.js"></script>
-  <script src="js/intersection-observer.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
-
-      if ("IntersectionObserver" in window) {
-        let lazyImageObserver = new IntersectionObserver(function (entries, observer) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              let lazyImage = entry.target;
-              lazyImage.src = lazyImage.dataset.src;
-              if (typeof lazyImage.dataset.srcset === "undefined") {
-              } else {
-                lazyImage.srcset = lazyImage.dataset.srcset;
-              }
-              lazyImage.classList.remove("lazy");
-              lazyImageObserver.unobserve(lazyImage);
-            }
-          });
-        });
-        lazyImages.forEach(function (lazyImage) {
-          lazyImageObserver.observe(lazyImage);
-        });
-      } else {
-        // Possibly fall back to a more compatible method here
-      }
-    });
-  </script>
   <script src="https://kit.fontawesome.com/0cb2ef8f5e.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -409,15 +381,6 @@
   </footer>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script src="https://player.vimeo.com/api/player.js"></script>
-  <script src="/js/slick.min.js"></script>
-  <script src="/js/photoswipe.min.js"></script>
-  <script src="/js/photoswipe-ui-default.min.js"></script>
-  <script src="/js/photoswipe-simplify.min.js"></script>
-  <script charset="utf-8">
-    photoswipeSimplify.init({
-      showHideOpacity: true,
-    });
-  </script>
   <script src="/js/script.js"></script>
 </body>
 </html>

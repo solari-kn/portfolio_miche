@@ -1629,13 +1629,17 @@ a {
   flex-wrap: wrap;
 }
 
-.pfMain_gallery figure {
+.pfMain_gallery a {
   width: 50%;
   margin: 0;
   padding: 2px;
 }
 
-.pfMain_gallery figure img {
+.pfMain_gallery a figure {
+  display: none;
+}
+
+.pfMain_gallery a img {
   max-width: 100%;
   max-height: 100%;
 }
@@ -2418,7 +2422,7 @@ a {
     font-size: 67.77709px;
   }
 
-  .pfMain_gallery figure {
+  .pfMain_gallery a {
     width: 25%;
   }
 
@@ -2747,7 +2751,7 @@ a {
     padding: 60px 0 60px 0;
   }
 
-  .pfMain_gallery figure {
+  .pfMain_gallery a {
     width: 20%;
   }
 
