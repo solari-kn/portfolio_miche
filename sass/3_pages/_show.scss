@@ -1,0 +1,177 @@
+.glbg {
+  &_sh {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 100%;
+    position: relative;
+    bottom: 0;
+    z-index: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom 30% center;
+    background-image: url(/images/show/bgimg001.jpg);
+    // margin-bottom: 30%;
+  }
+}
+
+.shMain {
+  background: #e4e4e4;
+  max-width: 1200px;
+  min-height: 300px;
+  margin: 0 auto;
+  padding: 50px 10px;
+  // text-align: center;
+  vertical-align: middle;
+  @include media(m) {
+    padding: 50px 60px;
+  }
+  &_h1jp {
+    font-family: $notos;
+  }
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    li {
+      font-family: $notos;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+    }
+  }
+
+  span {
+    font-family: $monts;
+    font-weight: 500;
+  }
+  h2 {
+    font-size: ms(1);
+    font-family: $monts;
+    font-weight: 500;
+    // margin-top: 70px;
+    @include media(l) {
+      font-size: ms(1, $thread: l);
+    }
+    a {
+      color: $footerColor;
+      text-decoration: underline;
+    }
+  }
+  button {
+    @include button();
+    border-radius: 0;
+    border: 2px solid #000;
+    display: inline;
+    margin-right: 1em;
+    font-family: $notos;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 2px 10px;
+    font-size: ms(0);
+    @include media(l) {
+      font-size: ms(0, $thread: l);
+    }
+    &:hover {
+      transform: translateY(0);
+      box-shadow: none;
+    }
+  }
+  .status {
+    color: #d30707;
+    font-weight: 500;
+    font-size: ms(0);
+    margin-right: 1em;
+    @include media (l) {
+      font-size: ms(0, $thread: l);
+    }
+  }
+  &_list {
+    padding: 0;
+    margin-bottom: 50px;
+    margin-left: 1em;
+    p {
+      font-weight: 300;
+      margin: 0;
+      line-height: 2.5;
+    }
+    br {
+      @include media() {
+        display: none;
+      }
+    }
+    li {
+      margin-bottom: 30px;
+    }
+  }
+  &_commet {
+    margin: 1em 0 1em 1em;
+    li {
+      font-size: 12px;
+    }
+  }
+  &_detail {
+    width: 80%;
+    margin: 0 auto;
+    @include media(m) {
+      width: 100%;
+      max-width: 700px;
+    }
+    @include media(l) {
+      max-width: 98%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    &_inner {
+      margin: 30px 0;
+      @include media(m) {
+        display: flex;
+        justify-content: space-between;
+        div {
+          width: 50%;
+          text-align: right;
+        }
+        .texts {
+          margin: 0 20px;
+        }
+      }
+      li {
+        font-size: 12px;
+        font-weight: 300;
+      }
+      @include media(l) {
+        width: 50%;
+        div {
+          text-align: left;
+        }
+      }
+      img {
+        width: 100%;
+      }
+      .disNone {
+        display: none;
+      }
+      h4 {
+        font-size: 14px;
+        font-weight: 700;
+        margin-bottom: 0.6em;
+        @include media() {
+          // font-size: ms(0, $thread: l);
+        }
+      }
+      figure {
+        display: none;
+      }
+      button {
+        margin-bottom: 16px;
+      }
+      .bookTitle {
+        font-size: ms(1, $thread: s);
+        font-weight: 500;
+        line-height: 1.5;
+        margin-top: 0;
+        @include media(l) {
+          font-size: ms(1, $thread: l);
+        }
+      }
+    }
+  }
+}

@@ -267,5 +267,5 @@
     }
   };
 
-  initPhotoSwipeFromDOM(".pfMain_gallery");
+  initPhotoSwipeFromDOM("#gallery");
 })();

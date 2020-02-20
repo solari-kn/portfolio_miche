@@ -11,7 +11,7 @@
         position: relative;
         background-repeat: no-repeat;
         background-size: cover;
-        background-position: center;
+        background-position: bottom 10% center;
       }
       // 背景イメージの読み込み
       $tmp: "";
@@ -26,7 +26,10 @@
         }
         // ゼロパディングは3桁
         .bgimg_#{$tmp} {
-          background-image: url(/images/bgimg_#{$tmp}.jpg);
+          background-image: url(/images/bgimgsp_#{$tmp}.jpg);
+          @include media(m) {
+            background-image: url(/images/bgimg_#{$tmp}.jpg);
+          }
         }
       }
     }
@@ -532,19 +535,20 @@
         font-family: $monts;
         letter-spacing: 0.08em;
       }
-      button {
-        background: none;
-        display: block;
-        border: 3px solid #000;
-        border-radius: 70px;
-        padding: 10px 30px;
-        margin: 0 auto;
-        margin-top: 30px;
-        a {
-          font-family: $monts;
-          font-weight: 500;
-          font-size: ms(1);
-          color: #000;
+      .buttons {
+        margin-top: 50px;
+        @include media(l) {
+          margin-top: 100px;
+          // display: flex;
+        }
+        // justify-content: space-between;
+        button {
+          margin: 0 auto;
+          margin-top: 50px;
+          @include button();
+          @include media(m) {
+            margin: 60px 20px 0 0;
+          }
         }
       }
     }
@@ -564,9 +568,6 @@
       &_text {
         flex: 0 0 60%;
         margin: 0;
-        button {
-          margin: 100px 0;
-        }
       }
       &_img {
         margin-top: 50px;
@@ -691,24 +692,10 @@
         font-size: ms(1, $thread: l);
       }
     }
+
     button {
-      background: none;
-      display: block;
-      border: 3px solid #000;
-      border-radius: 70px;
-      padding: 10px 30px;
+      @include button();
       margin: 40px auto 20px auto;
-      transition: all 300ms;
-      &:hover {
-        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
-        transform: translateY(-2px);
-      }
-      a {
-        font-family: $monts;
-        font-weight: 500;
-        font-size: ms(1);
-        color: #000;
-      }
       @include media(m) {
         margin-right: 0;
         margin-left: 0;

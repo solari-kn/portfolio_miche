@@ -1,5 +1,5 @@
 .glbg {
-  &_co {
+  &_wo {
     display: flex;
     align-items: center;
     width: 100%;
@@ -10,7 +10,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom 30% center;
-    background-image: url(/images/gallery/2020/img001.jpg);
+    background-image: url(/images/works/bgimg001.jpg);
     // margin-bottom: 30%;
   }
 }
@@ -42,10 +42,10 @@
   }
   span {
     font-family: $notos;
-    font-weight: 300;
-    font-size: ms(1, $thread: s);
+    font-weight: 100;
+    // font-size: ms(1, $thread: s);
     @include media(l) {
-      font-size: ms(1, $thread: l);
+      // font-size: ms(1, $thread: l);
     }
   }
   h3 {
@@ -63,7 +63,7 @@
     font-family: $notos;
     font-weight: 500;
     font-size: ms(1);
-    margin-left: 1em;
+    margin-left: 0.5em;
     @include media(m) {
       font-size: ms(1);
     }
@@ -104,25 +104,20 @@
       flex-wrap: wrap;
     }
     &_text {
-      margin-left: 30px;
+      // margin-left: 30px;
+      width: 100%;
       button {
-        cursor: pointer;
-        padding: 0.5em 20px;
-        background: none;
+        @include button();
         border: 2px solid #000;
         margin-top: 20px;
         margin-bottom: 20px;
-        border-radius: 20px;
+        padding: 8px 30px;
         p {
-          font-size: ms(0, $thread: s);
           font-family: $monts;
-          font-weight: 500;
-          color: #000;
           margin: 0;
-          @include media(l) {
-            font-size: ms(0, $thread: l);
-          }
+          font-weight: 500;
         }
+        // border-radius: 20px;
       }
     }
     &_inner {
@@ -152,7 +147,7 @@
     font-size: ms(1, $thread: s);
     @include media(l) {
       font-size: ms(0, $thread: l);
-      font-weight: 300;
+      font-weight: 700;
     }
     margin-bottom: 15px;
   }
