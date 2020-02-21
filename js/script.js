@@ -10,10 +10,8 @@ $(function() {
   });
 });
 
-
-
 $(function() {
-  $(".header_bg_slide, .slide-dots, .pfMain").on("click", function() {
+  $(".header_bg_slide, .slide-dots, .header_cover, .glHeader_cover").on("click", function() {
     if ($(".header, .glHeader").hasClass("open")) {
       $(".header, .glHeader").removeClass("open");
     }
@@ -26,7 +24,6 @@ var spHeight = 180;
 var pcglHeight = 80;
 var spglHeight = 60;
 
-
 $(window).on("resize", function() {
   winW = $(window).outerWidth();
   winH = $(window).height();
@@ -38,6 +35,7 @@ $(window).on("resize", function() {
     $(".header_nav").css("height", winH - pcHeight + "px");
     $(".glbg").css("height", outH - pcglHeight + "px");
     $(".glHeader_nav").css("height", winH - 80 + "px");
+    $(".glHeader_cover").css("height", winH + "px");
     $(".header_inner").css("height", pcHeight + "px");
   } else {
     $(".header_bg_slide").css("height", winH - spHeight + "px");
@@ -56,6 +54,7 @@ $(function() {
     $(".header_nav").css("height", winH - pcHeight + "px");
     $(".glbg").css("height", winH - pcglHeight + "px");
     $(".glHeader_nav").css("height", winH - 80 + "px");
+    $(".glHeader_cover").css("height", winH + "px");
     $(".header_inner").css("height", pcHeight + "px");
   } else {
     $(".header_bg_slide").css("height", winH - spHeight + "px");
@@ -71,10 +70,11 @@ $(window).on("scroll", function() {
   scT = $(window).scrollTop();
   winH = $(window).height();
   if (scT > 0 && winW > 959) {
-    $(".header_nav").addClass("scrl");
+    $(".header_nav, .header_cover").addClass("scrl");
     $(".scrl").css("height", winH + "px");
+    // $(".header_cover").css("height", winH + "px");
   } else if (winW > 959) {
-    $(".header_nav").removeClass("scrl");
+    $(".header_nav, .header_cover").removeClass("scrl");
     $(".header_nav").css("height", winH - pcHeight + "px");
   }
 });

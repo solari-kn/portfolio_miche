@@ -1265,6 +1265,18 @@ a {
   color: #cccccc;
 }
 
+.glHeader_cover {
+  visibility: hidden;
+  z-index: 15;
+  position: fixed;
+  width: 100%;
+  height: 800px;
+  background: #0a0a0a;
+  opacity: 0;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+
 @-webkit-keyframes fadeIn {
   0% {
     opacity: 0;
@@ -2106,6 +2118,18 @@ a {
   background: #c13584;
 }
 
+.header_cover {
+  visibility: hidden;
+  z-index: 15;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #0a0a0a;
+  opacity: 0;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+
 .open .header_hmg p {
   visibility: hidden;
   -webkit-transform: translateY(-50px);
@@ -2142,7 +2166,7 @@ a {
 .slide-dots {
   display: -webkit-box;
   display: flex;
-  z-index: 20;
+  z-index: 12;
   position: absolute;
   bottom: 20px;
   left: 50%;
@@ -2915,6 +2939,11 @@ a {
     bottom: 50%;
   }
 
+  .open .glHeader_cover {
+    visibility: visible;
+    opacity: 0.7;
+  }
+
   .abMain ul li {
     font-size: 16px;
   }
@@ -3130,6 +3159,11 @@ a {
 
   .header_inner_links .i-mail:hover svg {
     fill: #cccccc;
+  }
+
+  .open .header_cover.scrl {
+    visibility: visible;
+    opacity: 0.7;
   }
 
   .slide-dots {
