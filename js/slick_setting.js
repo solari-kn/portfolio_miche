@@ -1,5 +1,6 @@
-$(function() {
-  $("#slider").slick({
+$(function () {
+  var slide = $("#slider")
+  slide.slick({
     customPaging: function(slider, i) {
       return $("<div>");
     },
