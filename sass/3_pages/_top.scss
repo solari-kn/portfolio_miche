@@ -1,19 +1,12 @@
-body {
-  background: #37474f;
-
-}
 
 .loading {
   width: 100%;
   position: fixed;
   z-index: 150;
   height: 100%;
-  display: none;
-  // background: #d6d6d6;
   background: #37474f;
   // background-color: #000000;
   transition: 800ms all cubic-bezier(0.86, 0, 0.07, 1) 100ms;
-  background-image: url(/images/soft-wallpaper.png);
   &:before {
     content: "";
     height: 100%;
