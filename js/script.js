@@ -83,71 +83,71 @@ $(window).on("scroll", function() {
 });
 
 
-
 $(function() {
-  let $content = $(".container"),
-    $loadBg = $(".loading"),
-    $slider = $("#slider"),
-    $bar = $(".loading_wrap_line"),
-    // imagesLoadedオブジェクトを作成して格納
-    imgLoad = imagesLoaded(".load", { background: true }),
-    // body全体の画像の枚数を格納
-    imgTotal = imgLoad.images.length,
-    //読み込んだ画像の枚数を格納
-    imgLoaded = 0,
-    //プログレスバー現在地に相当する値を格納( =画像読込進捗度)
-    current = 0,
-    // 1秒当たり20回の頻度で読込状況をチェック
-    progressTimer = setInterval(updateProgress, 1000 / 30);
+  imagesLoaded(".loading", { background: true }, function() {
+    let $content = $(".container"),
+      $loadBg = $(".loading"),
+      $slider = $("#slider"),
+      $bar = $(".loading_wrap_line"),
+      // imagesLoadedオブジェクトを作成して格納
+      imgLoad = imagesLoaded(".load", { background: true }),
+      // body全体の画像の枚数を格納
+      imgTotal = imgLoad.images.length,
+      //読み込んだ画像の枚数を格納
+      imgLoaded = 0,
+      //プログレスバー現在地に相当する値を格納( =画像読込進捗度)
+      current = 0,
+      // 1秒当たり20回の頻度で読込状況をチェック
+      progressTimer = setInterval(updateProgress, 1000 / 30);
 
-  $content.hide();
+    $loadBg.show();
+    imgLoad.on("progress", function() {
+      imgLoaded++;
+    });
 
-  imgLoad.on("progress", function() {
-    imgLoaded++;
-  });
+    function updateProgress() {
+      let target = (imgLoaded / imgTotal) * 100;
 
-  function updateProgress() {
-    let target = (imgLoaded / imgTotal) * 100;
+      current += (target - current) * 0.2;
 
-    current += (target - current) * 0.2;
+      $bar.css({ width: current + "%" });
 
-    $bar.css({ width: current + "%" });
-
-    if (current >= 100) {
-      clearInterval(progressTimer);
-      $content.show("0", function () {
-        if ($slider.length) {
-          $slider.slick({
-            customPaging: function(slider, i) {
-              return $("<div>");
-            },
-            arrows: false,
-            dots: true,
-            autoplay: true,
-            autoplaySpeed: 5000,
-            speed: 1800,
-            pauseOnHover: false,
-            slidesToShow: 1,
-            fade: true,
-            slide: ".header_bg_slide",
-            dotsClass: "slide-dots",
-            zIndex: 1,
-            waitForAnimate: false
-          });
-        }
-        $loadBg.addClass("hide")
-        // $loadWrap.fadeOut("slow");
-        // $loadBg.animate({ right: "-100%" }, 800, "easeInOutQuint");
-      });
+      if (current >= 100) {
+        clearInterval(progressTimer);
+        $content.show("0", function() {
+          if ($slider.length) {
+            $slider.slick({
+              customPaging: function(slider, i) {
+                return $("<div>");
+              },
+              arrows: false,
+              dots: true,
+              autoplay: true,
+              autoplaySpeed: 5000,
+              speed: 1800,
+              pauseOnHover: false,
+              slidesToShow: 1,
+              fade: true,
+              slide: ".header_bg_slide",
+              dotsClass: "slide-dots",
+              zIndex: 1,
+              waitForAnimate: false
+            });
+          }
+          $loadBg.addClass("hide");
+          // $loadWrap.fadeOut("slow");
+          // $loadBg.animate({ right: "-100%" }, 800, "easeInOutQuint");
+        });
+      }
+      if (current > 99.9) current = 100;
     }
-    if (current > 99.9) current = 100;
-  }
+  });
 });
 
-imagesLoaded(".load", { background: true }).on("progress", function(
+imagesLoaded(".loading", { background: true }).on("progress", function(
   instance,
   image
 ) {
   const result = image.isLoaded ? "読み込まれました" : "壊れています";
-  console.log('${image.img.src}は${result}');
+  console.log(image.img.src + "は" + result);
 });

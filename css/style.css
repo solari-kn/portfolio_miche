@@ -1814,11 +1814,13 @@ a {
 }
 
 .loading {
+  display: none;
   z-index: 150;
   position: fixed;
   width: 100%;
   height: 100%;
   background: #37474f;
+  background-image: url(/images/soft-wallpaper.png);
   -webkit-transition: 800ms all cubic-bezier(0.86, 0, 0.07, 1) 100ms;
   transition: 800ms all cubic-bezier(0.86, 0, 0.07, 1) 100ms;
 }
@@ -1830,7 +1832,6 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url(/images/soft-wallpaper.png);
   -webkit-box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.8), inset 0 0 200px rgba(0, 0, 0, 0.6);
           box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.8), inset 0 0 200px rgba(0, 0, 0, 0.6);
   content: "";
@@ -1919,6 +1920,10 @@ a {
 
 .hide .loading_wrap {
   opacity: 0;
+}
+
+.container {
+  display: none;
 }
 
 .header_bg {
