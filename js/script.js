@@ -149,5 +149,5 @@ imagesLoaded(".load", { background: true }).on("progress", function(
   image
 ) {
   const result = image.isLoaded ? "読み込まれました" : "壊れています";
-  console.log('${image.img.src}は${result}');
+  console.log(image.img.src + "は" + result);
 });
