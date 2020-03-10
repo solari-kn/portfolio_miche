@@ -100,7 +100,7 @@ $(function() {
     // 1秒当たり20回の頻度で読込状況をチェック
     progressTimer = setInterval(updateProgress, 1000 / 30);
 
-  $content.hide();
+  // $content.hide();
 
   imgLoad.on("progress", function() {
     imgLoaded++;

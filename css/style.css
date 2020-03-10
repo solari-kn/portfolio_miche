@@ -1586,6 +1586,10 @@ a {
   background: #000;
 }
 
+.pfMain .dummy {
+  display: none;
+}
+
 .pfMain h3,
 .pfMain p {
   margin: 0 0 0 8px;
@@ -1613,29 +1617,6 @@ a {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-}
-
-.pfMain_gallery {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.pfMain_gallery a {
-  width: 50%;
-  margin: 0;
-  padding: 2px;
-}
-
-.pfMain_gallery a figure {
-  display: none;
-}
-
-.pfMain_gallery a img {
-  max-width: 100%;
-  max-height: 100%;
 }
 
 .glbg_sh {
@@ -2755,10 +2736,6 @@ a {
     font-size: 67.77709px;
   }
 
-  .pfMain_gallery a {
-    width: 25%;
-  }
-
   .shMain {
     padding: 50px 60px;
   }
@@ -3160,10 +3137,6 @@ a {
 
   .pfMain {
     padding: 60px 0 60px 0;
-  }
-
-  .pfMain_gallery a {
-    width: 20%;
   }
 
   .shMain h2 {

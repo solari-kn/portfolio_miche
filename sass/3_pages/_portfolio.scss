@@ -4,6 +4,9 @@
   @include media(l) {
     padding: 60px 0 60px 0;
   }
+  .dummy {
+    display: none;
+  }
   h3,
   p {
     color: #fff;
@@ -31,33 +34,33 @@
     width: 100%;
     margin: 0 auto;
   }
-  &_gallery {
-    display: flex;
-    flex-wrap: wrap;
-    // justify-content: center;
-    a {
-      margin: 0;
-      // max-width: 200px;
-      width: 50%;
-      // max-height: 200px;
-      padding: 2px;
-      figure {
-        display: none;
-      }
-      img {
-        max-width: 100%;
-        max-height: 100%;
-      }
-    }
-    @include media(m) {
-      a {
-        width: 25%;
-      }
-    }
-    @include media(l) {
-      a {
-        width: 20%;
-      }
-    }
-  }
+  // &_gallery {
+  //   display: flex;
+  //   flex-wrap: wrap;
+  //   // justify-content: center;
+  //   a {
+  //     margin: 0;
+  //     // max-width: 200px;
+  //     width: 50%;
+  //     // max-height: 200px;
+  //     padding: 2px;
+  //     figure {
+  //       display: none;
+  //     }
+  //     img {
+  //       max-width: 100%;
+  //       max-height: 100%;
+  //     }
+  //   }
+  //   @include media(m) {
+  //     a {
+  //       width: 25%;
+  //     }
+  //   }
+  //   @include media(l) {
+  //     a {
+  //       width: 20%;
+  //     }
+  //   }
+  // }
 }
